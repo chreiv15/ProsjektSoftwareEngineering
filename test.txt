@@ -1,8 +1,14 @@
-﻿Test 
+Test 
 
 test2 
 
+<<<<<<< HEAD
 ALKSdnalksndlkøasndASHDBjsbk
 
 asdaskdjaskædmlkæasdm 
 aædsoijasod
+=======
+ALKSdnalksndlkøasndASHDBjsbk
+
+alibaba
+>>>>>>> origin/master
