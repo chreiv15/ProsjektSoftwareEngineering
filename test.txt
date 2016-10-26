@@ -10,5 +10,11 @@ aædsoijasod
 =======
 ALKSdnalksndlkøasndASHDBjsbk
 
+<<<<<<< HEAD
 alibaba
+>>>>>>> origin/master
+=======
+alibaba
+
+yo mama
 >>>>>>> origin/master
