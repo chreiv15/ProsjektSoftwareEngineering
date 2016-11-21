@@ -154,7 +154,6 @@ function getSprintSpending($userId) {
         $val += @mysqli_fetch_row($response)[0];
         return $val;
     }
-    
 }
 
 function getAccounts($userId) {

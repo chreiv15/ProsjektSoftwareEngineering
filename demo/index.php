@@ -8,7 +8,7 @@ $user = 5201000;
     <meta charset="utf-8">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <style>
-        p,a,input,label {
+        p,a,input,label,td {
             font-family: sans-serif;
             font-size: 16px;
         }
@@ -30,9 +30,31 @@ $user = 5201000;
             font-size: 150px;
             cursor: pointer;
         }
+        .material-icons:hover {
+            color: darkslategray;
+        }
         main {
             text-align: center;
             margin-top: 25px;
+        }
+        #result {
+            margin-top: 50px;
+        }
+        #result p {
+            background-color: greenyellow;
+            padding: 10px;
+            width: 300px;
+            margin: 0 auto;
+            display: inline-block;
+        }
+        #transactionTable {
+            margin: 0 auto;
+        }
+        #transactionTable td:nth-child(1) {
+            width: 200px;
+        }
+        #transactions {
+            margin-top: 20px;
         }
     </style>
     <script>
@@ -57,10 +79,28 @@ $user = 5201000;
             }
             xmlhttp.onreadystatechange=function() {
                 if (xmlhttp.readyState==4 && xmlhttp.status==200) {
-                    document.getElementById("result").innerHTML=xmlhttp.responseText;
+                    var result = document.getElementById("result");
+                    result.innerHTML=xmlhttp.responseText;
+                    setTimeout(function(){ result.innerHTML=""; }, 3000);
+                    getTransactions(account);
                 }
             }
             var url = "../ajax/addTransaction.php?description="+desc+"&value="+price+"&category="+catg+"&account="+account;
+            console.log(url);
+            xmlhttp.open("GET",url,true);
+            xmlhttp.send();
+        }
+        function getTransactions(account){
+            if (window.XMLHttpRequest) {
+                xmlhttp=new XMLHttpRequest();
+            }
+            xmlhttp.onreadystatechange=function() {
+                if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+                    var result = document.getElementById("transactions");
+                    result.innerHTML=xmlhttp.responseText;
+                }
+            }
+            var url = "../ajax/getTransactions.php?account="+account;
             console.log(url);
             xmlhttp.open("GET",url,true);
             xmlhttp.send();
@@ -101,6 +141,7 @@ $user = 5201000;
         <input step="5" min="0" id="dlv" type="number" value="400">
     </div>
     <div id="result"></div>
+    <div id="transactions"></div>
 </main>
 <script>
 
