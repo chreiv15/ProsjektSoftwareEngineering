@@ -23,7 +23,7 @@ require_once 'ajax/user.php';
     table {
         border-collapse: collapse;
         margin-top: 10px;
-    }
+        margin-left: -5px;    }
     td {
         padding: 5px 10px;
         background-color: #FFF;
