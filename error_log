@@ -1,0 +1,134 @@
+[25-Oct-2016 09:23:37 UTC] PHP Fatal error:  Cannot redeclare getSpending() (previously declared in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php:21) in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 108
+[25-Oct-2016 09:23:53 UTC] PHP Fatal error:  Cannot redeclare getSpending() (previously declared in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php:21) in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 108
+[25-Oct-2016 09:24:21 UTC] PHP Fatal error:  Cannot redeclare getSpending() (previously declared in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php:22) in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 108
+[25-Oct-2016 09:24:26 UTC] PHP Fatal error:  Cannot redeclare getSpending() (previously declared in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php:22) in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 108
+[25-Oct-2016 09:24:40 UTC] PHP Fatal error:  Cannot redeclare getSpending() (previously declared in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php:22) in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 108
+[25-Oct-2016 09:24:56 UTC] PHP Fatal error:  Cannot redeclare getSpending() (previously declared in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php:22) in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 108
+[25-Oct-2016 09:25:09 UTC] PHP Fatal error:  Cannot redeclare getSpending() (previously declared in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php:22) in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 109
+[25-Oct-2016 09:25:15 UTC] PHP Fatal error:  Cannot redeclare getSpending() (previously declared in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php:22) in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 109
+[25-Oct-2016 09:25:19 UTC] PHP Fatal error:  Cannot redeclare getSpending() (previously declared in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php:22) in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 109
+[25-Oct-2016 10:22:25 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 55
+[25-Oct-2016 10:22:48 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 55
+[25-Oct-2016 10:23:10 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 57
+[25-Oct-2016 10:25:26 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 57
+[25-Oct-2016 10:37:03 UTC] PHP Fatal error:  Cannot redeclare getCurrentGoal() (previously declared in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php:92) in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 120
+[25-Oct-2016 10:37:44 UTC] PHP Fatal error:  Cannot redeclare getCurrentGoal() (previously declared in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php:93) in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 121
+[25-Oct-2016 10:38:05 UTC] PHP Fatal error:  Cannot redeclare getCurrentGoal() (previously declared in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php:93) in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 121
+[25-Oct-2016 10:38:08 UTC] PHP Fatal error:  Cannot redeclare getCurrentGoal() (previously declared in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php:93) in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 121
+[25-Oct-2016 10:38:16 UTC] PHP Fatal error:  Cannot redeclare getCurrentGoal() (previously declared in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php:93) in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 121
+[25-Oct-2016 10:38:41 UTC] PHP Fatal error:  Cannot redeclare getCurrentGoal() (previously declared in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php:93) in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 121
+[25-Oct-2016 10:38:49 UTC] PHP Fatal error:  Cannot redeclare getCurrentGoal() (previously declared in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php:93) in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 121
+[25-Oct-2016 10:39:20 UTC] PHP Fatal error:  Cannot redeclare getCurrentGoal() (previously declared in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php:94) in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 122
+[25-Oct-2016 10:39:34 UTC] PHP Fatal error:  Cannot redeclare getCurrentGoal() (previously declared in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php:94) in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 122
+[25-Oct-2016 10:40:08 UTC] PHP Fatal error:  Cannot redeclare getCurrentGoal() (previously declared in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php:94) in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 122
+[25-Oct-2016 10:40:15 UTC] PHP Fatal error:  Cannot redeclare getCurrentGoal() (previously declared in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php:94) in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 122
+[25-Oct-2016 10:42:10 UTC] PHP Fatal error:  Cannot redeclare getCurrentGoal() (previously declared in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php:95) in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 123
+[25-Oct-2016 10:42:11 UTC] PHP Fatal error:  Cannot redeclare getCurrentGoal() (previously declared in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php:95) in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 123
+[25-Oct-2016 10:42:16 UTC] PHP Fatal error:  Cannot redeclare getCurrentGoal() (previously declared in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php:95) in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 123
+[25-Oct-2016 10:42:39 UTC] PHP Fatal error:  Cannot redeclare getCurrentGoal() (previously declared in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php:95) in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 123
+[25-Oct-2016 10:42:53 UTC] PHP Fatal error:  Cannot redeclare getCurrentGoal() (previously declared in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php:95) in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 123
+[25-Oct-2016 10:43:11 UTC] PHP Fatal error:  Cannot redeclare getCurrentGoal() (previously declared in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php:93) in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 121
+[25-Oct-2016 10:43:52 UTC] PHP Fatal error:  Cannot redeclare getCurrentGoal() (previously declared in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php:92) in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 120
+[25-Oct-2016 10:44:20 UTC] PHP Fatal error:  Call to undefined function getCurrentSprintGoal() in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 28
+[25-Oct-2016 10:44:28 UTC] PHP Fatal error:  Cannot redeclare getCurrentGoal() (previously declared in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php:92) in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 120
+[25-Oct-2016 10:44:31 UTC] PHP Fatal error:  Cannot redeclare getCurrentGoal() (previously declared in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php:92) in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 120
+[25-Oct-2016 10:44:34 UTC] PHP Fatal error:  Cannot redeclare getCurrentGoal() (previously declared in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php:92) in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 120
+[25-Oct-2016 10:44:37 UTC] PHP Fatal error:  Cannot redeclare getCurrentGoal() (previously declared in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php:92) in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 120
+[25-Oct-2016 10:44:41 UTC] PHP Fatal error:  Call to undefined function getCurrentSprintGoal() in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 28
+[25-Oct-2016 10:45:17 UTC] PHP Fatal error:  Cannot redeclare getCurrentGoal() (previously declared in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php:92) in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 120
+[25-Oct-2016 10:45:23 UTC] PHP Fatal error:  Call to undefined function getCurrentSprintGoal() in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 28
+[25-Oct-2016 10:53:27 UTC] PHP Parse error:  syntax error, unexpected 'return' (T_RETURN) in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 118
+[25-Oct-2016 10:53:30 UTC] PHP Parse error:  syntax error, unexpected 'return' (T_RETURN) in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 118
+[25-Oct-2016 10:53:52 UTC] PHP Warning:  Wrong parameter count for number_format() in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 117
+[25-Oct-2016 11:25:49 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 25
+[25-Oct-2016 11:25:55 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 25
+[25-Oct-2016 11:57:05 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 25
+[25-Oct-2016 15:26:16 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 25
+[25-Oct-2016 15:27:11 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 25
+[25-Oct-2016 20:21:06 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 25
+[25-Oct-2016 20:21:18 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 25
+[25-Oct-2016 20:23:57 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 25
+[25-Oct-2016 20:24:01 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 25
+[26-Oct-2016 08:57:58 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 25
+[26-Oct-2016 08:58:48 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 25
+[26-Oct-2016 09:04:22 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 25
+[26-Oct-2016 10:18:26 UTC] PHP Warning:  include(): http:// wrapper is disabled in the server configuration by allow_url_fopen=0 in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/getPoints.php on line 3
+[26-Oct-2016 10:18:26 UTC] PHP Warning:  include(http://www.vg.no/): failed to open stream: no suitable wrapper could be found in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/getPoints.php on line 3
+[26-Oct-2016 10:18:26 UTC] PHP Warning:  include(): Failed opening 'http://www.vg.no/' for inclusion (include_path='.:/opt/cpanel/ea-php56/root/usr/share/pear') in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/getPoints.php on line 3
+[26-Oct-2016 10:18:28 UTC] PHP Warning:  include(): http:// wrapper is disabled in the server configuration by allow_url_fopen=0 in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/getPoints.php on line 3
+[26-Oct-2016 10:18:28 UTC] PHP Warning:  include(http://www.vg.no/): failed to open stream: no suitable wrapper could be found in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/getPoints.php on line 3
+[26-Oct-2016 10:18:28 UTC] PHP Warning:  include(): Failed opening 'http://www.vg.no/' for inclusion (include_path='.:/opt/cpanel/ea-php56/root/usr/share/pear') in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/getPoints.php on line 3
+[26-Oct-2016 10:56:04 UTC] PHP Fatal error:  Call to undefined function getSpending() in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/header.php on line 55
+[26-Oct-2016 10:56:15 UTC] PHP Fatal error:  Call to undefined function getSpending() in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/header.php on line 55
+[26-Oct-2016 10:56:41 UTC] PHP Fatal error:  Call to undefined function getSpending() in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 51
+[26-Oct-2016 10:57:08 UTC] PHP Fatal error:  Call to undefined function getSpending() in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 51
+[26-Oct-2016 10:59:10 UTC] PHP Fatal error:  Call to undefined function getSpending() in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 51
+[26-Oct-2016 10:59:38 UTC] PHP Fatal error:  Call to undefined function getSpending() in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 52
+[26-Oct-2016 10:59:57 UTC] PHP Fatal error:  Call to undefined function getSpending() in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 51
+[26-Oct-2016 11:00:02 UTC] PHP Fatal error:  Call to undefined function getSpending() in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 51
+[26-Oct-2016 11:00:08 UTC] PHP Fatal error:  Call to undefined function getSpending() in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 52
+[27-Oct-2016 09:00:08 UTC] PHP Parse error:  syntax error, unexpected '}' in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 48
+[27-Oct-2016 09:00:16 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 25
+[27-Oct-2016 09:00:16 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 37
+[27-Oct-2016 09:11:30 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 25
+[27-Oct-2016 09:11:30 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 37
+[27-Oct-2016 09:11:33 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 25
+[27-Oct-2016 09:11:33 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 37
+[27-Oct-2016 09:11:39 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 25
+[27-Oct-2016 09:11:39 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 37
+[27-Oct-2016 09:11:53 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 25
+[27-Oct-2016 09:11:53 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 37
+[27-Oct-2016 09:11:58 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 25
+[27-Oct-2016 09:11:58 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 37
+[27-Oct-2016 09:11:59 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 25
+[27-Oct-2016 09:11:59 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 37
+[27-Oct-2016 09:12:00 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 25
+[27-Oct-2016 09:12:00 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 37
+[27-Oct-2016 09:13:38 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 25
+[27-Oct-2016 09:13:38 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 37
+[27-Oct-2016 09:13:40 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 25
+[27-Oct-2016 09:13:40 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 37
+[27-Oct-2016 09:14:12 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 25
+[27-Oct-2016 09:14:12 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 37
+[27-Oct-2016 09:15:23 UTC] PHP Parse error:  syntax error, unexpected 'require' (T_REQUIRE), expecting ',' or ';' in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 46
+[27-Oct-2016 09:15:28 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 25
+[27-Oct-2016 09:15:28 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 37
+[27-Oct-2016 09:15:47 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 25
+[27-Oct-2016 09:15:47 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 37
+[27-Oct-2016 09:22:41 UTC] PHP Fatal error:  Call to undefined function getStreakCount() in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/header.php on line 71
+[27-Oct-2016 09:22:50 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 25
+[27-Oct-2016 09:22:50 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 37
+[27-Oct-2016 09:23:56 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 25
+[27-Oct-2016 09:23:56 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 37
+[27-Oct-2016 09:24:23 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 25
+[27-Oct-2016 09:24:23 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 37
+[27-Oct-2016 09:24:25 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 25
+[27-Oct-2016 09:24:25 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 37
+[27-Oct-2016 09:25:26 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 25
+[27-Oct-2016 09:25:26 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 37
+[27-Oct-2016 09:25:27 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 25
+[27-Oct-2016 09:25:27 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 37
+[27-Oct-2016 09:26:51 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 25
+[27-Oct-2016 09:26:51 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 37
+[27-Oct-2016 09:26:57 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 25
+[27-Oct-2016 09:26:57 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 37
+[27-Oct-2016 10:27:24 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 25
+[27-Oct-2016 10:27:24 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 37
+[27-Oct-2016 10:27:41 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 25
+[27-Oct-2016 10:27:41 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 37
+[27-Oct-2016 10:27:43 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 25
+[27-Oct-2016 10:27:43 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 37
+[27-Oct-2016 10:28:32 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 25
+[27-Oct-2016 10:28:32 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 37
+[27-Oct-2016 11:36:18 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 24
+[27-Oct-2016 11:36:18 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 63
+[27-Oct-2016 11:43:21 UTC] PHP Fatal error:  Call to undefined function getAccounts() in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/header.php on line 40
+[27-Oct-2016 11:46:47 UTC] PHP Parse error:  syntax error, unexpected 'if' (T_IF) in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 152
+[27-Oct-2016 12:43:55 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 24
+[27-Oct-2016 12:43:55 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 63
+[27-Oct-2016 12:57:38 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 24
+[27-Oct-2016 12:57:38 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 63
+[27-Oct-2016 13:01:25 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 24
+[27-Oct-2016 13:01:25 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 63
+[27-Oct-2016 13:20:31 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 24
+[27-Oct-2016 13:20:31 UTC] PHP Warning:  Division by zero in /home/hagfre15/public_html/hagfre15.2015.tek.westerdals.no/web/gruppe19/functions.php on line 63
