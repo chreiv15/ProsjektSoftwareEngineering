@@ -335,6 +335,7 @@ function getUser($email, $password) {
         $firstname = $row[1];
         $lastname = $row[2];
         $email = $row[3];
+        $phone = $row[4];
         $content = "$id|$firstname|$lastname|$email|$phone";
         setcookie("login", $content, time()+3600, "/");
         return 'true';

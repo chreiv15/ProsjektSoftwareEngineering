@@ -92,7 +92,7 @@ echo getSprintResult($userId);
     <input type="submit">
 </form>
 <?php
-    if($_POST['email']) {
+    if(isset($_POST['email'])) {
         resetPassword($_POST['email']);
     }
 ?>
