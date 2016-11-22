@@ -15,9 +15,6 @@ hr {
     color: #007272; }
 .text-failure {
     color: #f35564; }
-
-.pages-container {
-    overflow: hidden !important; }
 .page {
     min-height: 700px;
     padding-top: 260px;

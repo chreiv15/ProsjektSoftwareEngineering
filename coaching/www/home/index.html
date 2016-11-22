@@ -38,7 +38,7 @@
         <!-- cordova script (this will be a 404 during development) -->
         <script src="../cordova.js"></script>
 
-        <!-- your app's js -->
+        <!-- custom js -->
         <script src="../js/app.js"></script>
     </head>
   
@@ -59,20 +59,20 @@
                 </div>
                 
                 <div class="tabs">
-                    <a class="tab-item active" href="#page1" onclick="setActive(this);">
-                        <i class="icon ion-home"></i>
+                    <a class="tab-item active" onclick="setActive(this);plusPage(1);">
+                        Tidligere økt
                     </a>
-                    <a class="tab-item" href="#page2" onclick="setActive(this);">
-                        <i class="icon ion-star"></i>
+                    <a class="tab-item" onclick="setActive(this);plusPage(2);">
+                        Nåværende økt
                     </a>
-                    <a class="tab-item" href="#page3" onclick="setActive(this);">
-                        <i class="icon ion-gear-a"></i>
+                    <a class="tab-item" onclick="setActive(this);plusPage(3);">
+                        Sparemål
                     </a>
                 </div>
             </div>
             
             <div class="pages-container">
-                <div class="page" id="page1">
+                <div class="page page1">
                     <div id="prior-list" class="list">
                         <a class="item item-icon-left" href="#">
                             <i class="fa fa-check-circle-o text-success" aria-hidden="true"></i>
@@ -89,12 +89,12 @@
                         <a class="item item-icon-left" href="#">
                             <i class="fa fa-times-circle-o text-failure" aria-hidden="true"></i>
                             ØKT 3
-                            <span class="item-note">22.07.16 - 23.08.16</span>
+                            <span class="item-note">22.07.16 - 22.08.16</span>
                         </a>
                     </div>
                 </div>
 
-                <div class="page" id="page2">
+                <div class="page page2">
                     <div class="card current-card">
                         <div class="item-text-wrap">
                             <h4 class="card-title">24.08.16</h4>
@@ -108,7 +108,7 @@
                     </div>
                 </div>
 
-                <div class="page" id="page3">
+                <div class="page page3">
                     <div class="card goal-card">
                         <div class="item-text-wrap">
                             <h4 class="card-title">Ditt sparemål er: <span class="text-success">Reise</span></h4>
