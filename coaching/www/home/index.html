@@ -48,21 +48,21 @@
             
             <div class="tabs-striped tabs-top tabs-background-positive tabs-color-light">
                 <div class="bar bar-header">
-                    <div class="h1 title">ØKT</div>
+                    <div class="h1 title">Hjem</div>
                     
                     <div class="card user-card">
                         <div class="item-text-wrap">
                             <div class="card-pic"></div>
-                            <a><h4 class="card-name"></h4></a>
+                            <a href="../user/"><h4 class="card-name">Tommy Sevaldsen</h4></a>
                         </div>
                     </div>
                 </div>
                 
                 <div class="tabs">
-                    <a class="tab-item active" onclick="setActive(this);plusPage(1);">
+                    <a class="tab-item" onclick="setActive(this);plusPage(1);">
                         Tidligere økt
                     </a>
-                    <a class="tab-item" onclick="setActive(this);plusPage(2);">
+                    <a class="tab-item active" onclick="setActive(this);plusPage(2);">
                         Nåværende økt
                     </a>
                     <a class="tab-item" onclick="setActive(this);plusPage(3);">
@@ -72,7 +72,7 @@
             </div>
             
             <div class="pages-container">
-                <div class="page page1">
+                <div class="page page1" style="display:none;">
                     <div id="prior-list" class="list">
                         <a class="item item-icon-left" href="#">
                             <i class="fa fa-check-circle-o text-success" aria-hidden="true"></i>
@@ -94,7 +94,7 @@
                     </div>
                 </div>
 
-                <div class="page page2">
+                <div class="page page2" style="display:block;">
                     <div class="card current-card">
                         <div class="item-text-wrap">
                             <h4 class="card-title">24.08.16</h4>
@@ -108,7 +108,7 @@
                     </div>
                 </div>
 
-                <div class="page page3">
+                <div class="page page3" style="display:none;">
                     <div class="card goal-card">
                         <div class="item-text-wrap">
                             <h4 class="card-title">Ditt sparemål er: <span class="text-success">Reise</span></h4>

@@ -23,7 +23,7 @@ angular.module('starter', ['ionic'])
   });
 })
 
-var pageIndex = 1;
+var pageIndex = 2;
 showPage(pageIndex);
 
 function plusPage(n) {

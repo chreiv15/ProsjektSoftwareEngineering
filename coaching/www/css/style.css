@@ -4,6 +4,13 @@
  *    Global variables
  */
 
+body * {
+    -webkit-transition: all 0.2s ease;
+        -ms-transition: all 0.2s ease;
+            transition: all 0.2s ease;
+}
+a {
+    text-decoration: none; }
 .bg-primary {
     background: #efefef; }
 h1, h2, h3, h4, h5, p {
@@ -16,12 +23,11 @@ hr {
 .text-failure {
     color: #f35564; }
 .page {
-    min-height: 700px;
+    min-height: 600px;
     padding-top: 260px;
     background: #efefef; }
 .card-title {
     text-align: center; }
-
 .current-card, .goal-card {
     width: 90%;
     padding: 20px 0px;
@@ -39,16 +45,34 @@ hr {
     color: #fff !important; }
 /* /Button */
 
+/* List styles */
+.item-header {
+    background: transparent;
+    padding: 10px 25px;
+    margin-top: 20px;
+    border-color: transparent; }
+/* /List */
+
 /*
  *    Header
  */
 
+.bar-header {
+    text-align: center; }
 .user-card {
     height: 150px;
     width: 70%;
     margin: 50px auto;
     box-shadow: none;
     background: transparent; }
+.card-pic {
+    width: 80px;
+    height: 80px;
+    border-radius: 100%;
+    border: 1px solid #fff; 
+    margin: 10px auto 25px !important;}
+.card-name {
+    color: #fff; }
 .tabs {
     box-shadow: 0px 2px 10px rgba(36, 36, 36, 0.7); }
 
@@ -99,6 +123,44 @@ hr {
  *    Page 3 / sparemål
  */
 
+/*
+ *    Page 4 / brukerprofil
+ */
+
+.user-profile .tabs-top .bar-header {
+    position: relative;
+}
+.fa-back {
+    width: 50px;
+    height: 50px;
+    color: #fff;
+    position: absolute;
+    padding: 5px 20px;
+    z-index: 5000;
+    font-size: 26px !important; }
+.profile-tabs {
+    height: 210px !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none; }
+.profile-page {
+    padding-top: 160px; }
+.profile-input {
+    width: 60%;
+    border: none;
+    float: right;
+    padding-top: 2px;
+    text-align: right; }
+.item-save {
+    color: #fff;
+    text-align: center;
+    background: #007272;
+    border: none; }
+.item-delete {
+    color: #fff;
+    text-align: center;
+    background: #f35564;
+    border: none; }
 
 
 
