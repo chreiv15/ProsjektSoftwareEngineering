@@ -61,6 +61,7 @@ $user = 5201000;
         var account = 97348898349;
         function buy(){
             document.getElementById("result").innerHTML = "<p>Kjøper...</p>";
+            document.getElementById("registerSound").play();
             console.log("Buy "+this.parentNode.id);
             var nodes = this.parentNode.childNodes;
             var price = nodes[7].value;
@@ -140,6 +141,9 @@ $user = 5201000;
         <label for="dlv">kr</label>
         <input step="5" min="0" id="dlv" type="number" value="400">
     </div>
+    <audio id="registerSound">
+        <source src="register.ogg" type="audio/ogg" hidden>
+    </audio>
     <div id="result"></div>
     <div id="transactions"></div>
 </main>
