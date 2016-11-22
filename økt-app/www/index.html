@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+
+<html>
+
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+
+        <!-- Framework stylesheets -->
+        <link rel="stylesheet" href="css/stylesheet-jquerymobile.css" />
+        
+        <!--    Carousel slider    -->
+        <link rel="stylesheet" href="css/stylesheet-carousel.css" />  
+        
+        <!--   Custom stylesheet   --> 
+        <link rel="stylesheet" href="css/stylesheet.css" />  
+        
+        <!--   Fontawesome stylesheet   --> 
+        <link rel="stylesheet" href="css/font-awesome.css" />    
+        
+        <!--   Framework scripts   -->
+        <script type="text/javascript" src="js/cordova.js"></script>
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/jquery.mobile-1.4.5.min.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        
+        <!--    Carousel script    -->
+        <script type="text/javascript" src="js/jquery.transit.min.js"></script>
+        <script type="text/javascript" src="js/jquery.ferroSlider.min.js"></script>
+        
+        <script type="text/javascript">
+            app.initialize();
+        </script>      
+        
+        <script type="text/javascript">
+			$(document).ready(function() {
+				$(".slidingSpaces").ferroSlider({
+					easing         : 'snap',
+					createMap      : true,
+					mapPosition    : 'top_center'
+				});
+			});
+        </script> 
+        <script>
+        
+        function submitCheck() {
+            var user = document.getElementById("email").value;
+            var pin = document.getElementById("pin").value;
+            if(pin.length == 4) {
+
+                if (window.XMLHttpRequest) {
+                    xmlhttp=new XMLHttpRequest();
+                }
+                xmlhttp.onreadystatechange=function() {
+                    if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+                        document.getElementById("box").innerHTML=xmlhttp.responseText;
+                    }
+                }
+                var url = "ajax/getUser.php?user="+user+"&password="+pin;
+                console.log(url);
+                xmlhttp.open("GET",url,true);
+                xmlhttp.send();
+                
+            }
+        }
+            
+        </script>
+        
+        <title>Coaching</title>
+    </head>
+
+    <body>
+        
+        <div class="app">
+
+            <!-- LOGIN SCREEN -->
+            <div data-role="page" id="login" class="page">
+
+                <div class="logo"></div>
+                
+                <div role="main" class="ui-content">
+                    <h3 class="main-header"><span class="text-success">Vennligst logg inn</span></h3>
+                    <hr>
+                    
+                    <div class="form-container">
+                        <form class="form login-form">
+                            <div class="input-group">
+                                <label for="email" class="login-label">E-post</label>
+                                <input type="text" name="email" id="email" class="login-input">
+                            </div>
+                            
+                            <div class="input-group">
+                                <label for="pin" class="login-label">Pin-kode</label>
+                                <input type="number" name="pin" id="pin" class="login-input" onkeyup="submitCheck()">
+                            </div>
+                            <div id="box"></div>
+                        </form>
+                    </div>
+                </div>     
+
+            </div> <!-- / LOGIN SCREEN -->
+
+            <!-- REGISTER SCREEN ->
+            <div data-role="page" id="register" class="page">
+
+                <div role="main" class="ui-content">
+                    <form id="login-form">
+                        <input type="text" placeholder="Fornavn" required autofocus>
+                        <input type="text" placeholder="Etternavn" required>
+                        <input type="text" placeholder="E-post adresse" required>
+                        <input type="password" placeholder="Pin kode" required>
+                    </form>
+                    
+                    <div class="btn-group">
+                        <a href="#login"><button>Tilbake</button></a>
+                        <a href="#home"><button>Registrer</button></a>
+                    </div>
+                </div>     
+
+            </div> <!-- / REGISTER SCREEN -->
+            
+            <!-- HOME SCREEN -->
+            <div data-role="page" id="home" class="page">
+
+                <div class="header" data-role="header" data-position="fixed">
+                    <div class="header-inner">
+                        <h4 class="logo">ØKT</h4>
+                        
+                        <div class="btn-icon"></div>
+                        <div class="btn-icon"></div>
+                        
+                        <div class="user-container">
+                            <div class="user-pic"></div>
+                            <a href="javascript:$.fn.ferroSlider.slideTo('div4');"><h4 class="user-name">Tommy Sevaldsen<i class="fa fa-angle-double-right" aria-hidden="true" style="margin-left:15px;"></i></h4></a>
+                        </div>
+                    </div>
+                </div> <!-- /header -->
+
+                <div role="main" class="ui-content">
+                
+                    <!-- Page 1 / Tidligere økt -->
+                    <div id="div1" class="slidingSpaces page-inner" title="Page 1">
+                        <ul>
+                            <li>
+                                <div class="list-elmt">
+                                    <div class="list-icon"></div>
+                                    <h4 class="list-header">ØKT 1</h4>
+                                    <h5 class="list-text">20.05.16 - 20.06.16 | <span class="text-success">Vellykket</span></h5>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="list-elmt">
+                                    <div class="list-icon"></div>
+                                    <h4 class="list-header">ØKT 2</h4>              
+                                    <h5 class="list-text">21.06.16 - 21.07.16 | <span class="text-success">Vellykket</span></h5>                                  
+                                </div>
+                            </li>
+                            <li>
+                                <div class="list-elmt">
+                                    <div class="list-icon"></div>
+                                    <h4 class="list-header">ØKT 3</h4>                         
+                                    <h5 class="list-text">22.07.16 - 22.08.16 | <span class="text-failure">Mislykket</span></h5>                                    
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- Page 2 / Nåværende økt -->
+                    <div id="div2" class="slidingSpaces page-inner" title="Page 2">
+                        <h4 class="page-header">23.08.16 - 23.09.16</h4>
+                        <hr>
+                        
+                        <h4 class="budget-text">Gjenstående beløp <br>
+                                                  <span class="text-success">4300/6700</span></h4>
+                        <div class="icon"></div>
+                        
+                        <h4 class="progress-text">15 dager gjenstår</h4>
+                        <div class="goal-progress"></div>
+                    </div>
+    
+                    <!-- Page 3 / Sparemål -->
+                    <div id="div3" class="slidingSpaces page-inner" title="Page 3">
+                        <h4 class="page-header">Ditt sparemål er: <span class="text-success">Reise</span></h4>
+                        <hr>
+                        
+                        <div class="goal-icon"></div>
+                        
+                        <h4 class="page-header">Du har spart: <span class="text-success">750,-</span> så langt denne økten</h4>                        
+                    </div>
+                    
+                    <!-- Page 4 / Profil -->
+                    <div id="div4" class="slidingSpaces page-inner" title="Page 4">
+                        <ul>
+                            <!-- Personal information -->
+                            <li>
+                                <div class="profile-header">
+                                    <h5>Personliginformasjon</h5>
+                                </div>
+                            </li>
+                            <li>
+                                <a><div class="profile-elmt">
+                                    <h5 class="info-header">Telefonnummer</h5>
+                                    <h5><span class="text-success">+47 478 63 970</span></h5>
+                                </div></a>
+                            </li>
+                            <li>
+                                <a><div class="profile-elmt">
+                                    <h5 class="info-header">E-post</h5>
+                                    <h5><span class="text-success">tommysevaldsen@gmail.com</span></h5>
+                                </div></a>
+                                <hr class="profile-hr">
+                            </li>
+                            <!-- /personal -->
+                               
+                            <li>
+                                <div class="profile-header">
+                                    <h5>Kontoinformasjon</h5>
+                                </div>
+                            </li>
+                            <li>
+                                <a><div class="profile-elmt">
+                                    <h5 class="info-header">Ønsket sparekonto</h5>
+                                    <h5><span class="text-success">102 58 27749</span></h5>
+                                </div></a>
+                            </li>
+                        </ul>
+                        
+                        <button class="btn btn-delete">Slett profil</button>
+                    </div>
+                
+                </div>     
+
+            </div> <!-- / HOME SCREEN -->
+            
+            <!-- PROFILE SCREEN -->
+            <div data-role="page" id="profile" class="page">
+
+                <div role="main" class="ui-content">
+                    <!-- profile statistics -->
+                    <a href="#home" data-transition="slideup">TILBAKE</a>
+                </div>     
+
+            </div> <!-- / PROFILE SCREEN -->
+            
+        </div>
+        
+        <script type="text/javascript">
+            window.onload = function() {
+                document.getElementById("dot_div1").innerHTML = "Tidligere ØKT";
+                document.getElementById("dot_div2").innerHTML = "Nåværende ØKT";
+                document.getElementById("dot_div3").innerHTML = "Sparemål";
+            }
+        </script> 
+
+    </body>
+
+</html>
