@@ -18,28 +18,38 @@ function val($data) {
 ** Calc methods
 */
 
+/*
+ * Metoden suggestSprintGoal kalkulerer et forslag til nytt
+ * sparemål basert på hva du har spart tidligere.
+*/
 function suggestSprintGoal($result, $goal) {
     
-    $diff = $goal - $result;
-    $q = abs($diff/$goal);
-    if($diff<0) {
-        return round($goal*($q*2+1)/10)*10;
+    if(isset($goal)){
+        $diff = $goal - $result;
+        $q = abs($diff/$goal);
+        if($diff<0) {
+            return round($goal*($q*2+1)/10)*10;
+        } else {
+            return $goal;
+        }
     } else {
-        return $goal;
+        return 0;
     }
 }
 
 /*
 ** Get methods
 */
-
+/*
+** Metoden getStreakCount sjekker hvor mange økter der sparemålet er oppnådd på rad.
+*/
 function getStreakCount($userId) {
 
     require 'dbc.php';
     
     $userId = val($userId);
     
-    $sql = "SELECT * FROM ".dbname.".dnb_history WHERE user = $userId ORDER BY id DESC";
+    $sql = "SELECT * FROM dnb_history WHERE user = $userId ORDER BY id DESC";
     
     $response = @mysqli_query($dbc, $sql);
     if($response) {
@@ -56,49 +66,46 @@ function getStreakCount($userId) {
     return $streak;
 }
 
+/*
+** Metoden getLevel returnerer nivået brukeren er på. 
+*/
 function getLevel($userId, $spending) {
     
     $before = getBeforeSpending($userId);
-    $saved = $before-$spending;
     $percent = (1-$spending/$before)*100;
     $level = round($percent/2.5,0,PHP_ROUND_HALF_DOWN);
-    return $level;
+    if($level>0){
+        return $level;
+    }else{
+        return 0;
+    }
 
 }
 
+
+// Metoden getSpringResult henter ut øktens nøkkeltall og returnerer det som et array.
 function getSprintResult($userId) {
     
     $userId = val($userId);
+    $resultValues = array();
     
-    $before = getBeforeSpending($userId);
-    $spending = getSprintSpending($userId);
-    $goal = getCurrentGoal($userId);
-    $currentSprintGoal = getCurrentSprintGoal($userId);
-    $saved = $before - $spending;
-    $nextSprintGoal = suggestSprintGoal($saved, $currentSprintGoal);
-    $level = getLevel($userId, $spending);
-    $sprint = getCurrentSprint($userId);
-    $date = getCurrentSprintStart($userId);
-    $end = getCurrentSprintEnd($userId);
-    //$result = addSprintResut($userId, $sprint, $currentSprintGoal, $saved, $date);
-    echo "<div class='box'>";
-    echo "<p><b>ØKT REVIEW</b></p>";
-    echo "<p>Goal value: $goal kr</p>";
-    echo "<p>Current sprint goal: $currentSprintGoal kr</p>";
-    echo "<p>Spending before: $before kr</p>";
-    echo "<p>Spending now: $spending kr</p>";
-    echo "<p>Saved this sprint: $saved kr</p>";
-    echo "<p>Goal suggestion: $nextSprintGoal kr</p>";
-    echo "<p>Level: $level</p>";
-    echo "<p>Date: $date</p>";
-    echo "<p>End: $end</p>";
-    echo "<p>SprintID: $sprint</p>";
-    echo "<p>Add result: $result</p>";
-    print_r(checkBadgeResult($userId, $level));
-    echo "</div>";
-        
+    $resultValues['before'] = getBeforeSpending($userId);
+    $resultValues['spending'] = getSprintSpending($userId);
+    $resultValues['goal'] = getCurrentGoal($userId);
+    $resultValues['currentSprintGoal'] = getCurrentSprintGoal($userId);
+    $resultValues['saved'] = $resultValues['before'] - $resultValues['spending'];
+    $resultValues['nextSprintGoal'] = suggestSprintGoal($resultValues['saved'], $resultValues['currentSprintGoal']);
+    $resultValues['level'] = getLevel($userId, $resultValues['spending']);
+    $resultValues['streak'] = getStreakCount($userId);
+    $resultValues['sprint'] = getCurrentSprint($userId);
+    $resultValues['date']['start'] = getCurrentSprintStart($userId);
+    $resultValues['date']['end'] = getCurrentSprintEnd($resultValues['date']['start']);
+    //echo addSprintResut($userId, $resultValues['sprint'], $resultValues['currentSprintGoal'], $resultValues['saved'], $resultValues['date']['start']);
+    $resultValues['badges'] = checkBadgeResult($userId, $resultValues['level'],$resultValues['streak']);
+    return $resultValues;        
 }
 
+//
 function getCurrentSprint($userId) {
     
     require 'dbc.php';
@@ -112,28 +119,19 @@ function getCurrentSprint($userId) {
 function getCurrentSprintStart($userId) {
     
     require 'dbc.php';
+    $userId = val($userId);
     $sql = "SELECT MAX(startdate) FROM hagfre15_dnb.dnb_history WHERE user = $userId";
     $response = @mysqli_query($dbc, $sql);
     if($response) {
         $date = @mysqli_fetch_row($response)[0];
-        $date = explode("-",$date);
-        if($date[1]!=12) {
-            $date = $date[0]."-".($date[1]+1)."-".$date[2];
-        } else {
-            $date = ($date[0]+1)."-01-".$date[2];
-        }
         return $date;
     }
 }
 
-function getCurrentSprintEnd($userId) {
-    $date = getCurrentSprintStart($userId);
-    $date = explode("-",$date);
-    if($date[1]!=1 && $date[1]!="01") {
-        $date = $date[0]."-".($date[1]+1)."-".$date[2];
-    } else {
-        $date = ($date[0]+1)."-12-".$date[2];
-    }
+function getCurrentSprintEnd($start) {
+    $start = strtotime($start);
+    $date = date("Y-m-d", strtotime("+1 month", $start));
+    
     return $date;
 }
 
@@ -142,7 +140,7 @@ function getSprintSpending($userId) {
     require 'dbc.php';
     
     $start = getCurrentSprintStart($userId);
-    $end = getCurrentSprintEnd($userId);
+    $end = getCurrentSprintEnd($start);
     
     $sql = "SELECT SUM(t.value) FROM hagfre15_dnb.dnb_transactions AS t JOIN dnb_accounts AS a ON t.account = a.id JOIN dnb_users AS u ON a.owner = u.id WHERE u.id = $userId AND a.type = 1 AND accounting_date BETWEEN '$start' AND '$end'";
     
@@ -154,6 +152,7 @@ function getSprintSpending($userId) {
         $val += @mysqli_fetch_row($response)[0];
         return $val;
     }
+    mysqli_close($dbc);
 }
 
 function getAccounts($userId) {
@@ -165,16 +164,12 @@ function getAccounts($userId) {
     $response = @mysqli_query($dbc, $sql);
     
     if($response) {
-        $string = '';
-        $string .= '<table>';
-        while($row = mysqli_fetch_array($response)) {
-            $string .= '<tr><td>'.$row['id'].'</td><td>'.$row['name'].'</td><td>'.number_format($row['value'],2,",",".").' kr</td></tr>';
+        $array = array();
+        while($row = mysqli_fetch_assoc($response)) {
+            array_push($array,$row);
         }
-        $string .= '</table>';
-    } else {
-        $string = 'No response (accounts)';
+        return $array;
     }
-    return $string;
     mysqli_close($dbc);
 }
 
@@ -357,41 +352,58 @@ function getPasswordResetCode($userId) {
 ** Check methods
 */
 
-function checkBadgeResult($userId, $level) {
+function checkBadgeResult($userId, $level, $streak) {
     $badges = array();
-    $streak = getStreakCount($userId);
     switch($streak) {
         case 3:
-            array_push($badges,11);
+            $badges['streak'] = 11;
             break;
         case 5:
-            array_push($badges,12);
+            $badges['streak'] = 12;
             break;
         case 10:
-            array_push($badges,13);
+            $badges['streak'] = 13;
             break;
         case 12:
-            array_push($badges,14);
+            $badges['streak'] = 14;
             break;
         case 15:
-            array_push($badges,15);
+            $badges['streak'] = 15;
             break;
         case 20:
-            array_push($badges,16);
+            $badges['streak'] = 16;
             break;
         case 20:
-            array_push($badges,17);
+            $badges['streak'] = 17;
             break;
         case 24:
-            array_push($badges,18);
+            $badges['streak'] = 18;
             break;
         default:
             break;
     }
-    $levelbadge = 100+$level;
-    array_push($badges,$levelbadge);
+    $badges['level'] = 100+$level;
     
     return $badges;
+    
+}
+
+function getBadges($userId) {
+ 
+    require 'dbc.php';
+    
+    $userId = val($userId);
+    
+    $sql = "SELECT * FROM dnb_badges WHERE user = $userId ORDER BY badgeId DESC";
+    
+    $response = @mysqli_query($dbc, $sql);
+    if($response) {
+        $badges = array();
+        while($row = mysqli_fetch_assoc($response)) {
+            array_push($badges,array('id'=>$row['badgeId'],'amount'=>$row['amount']));
+        }
+        return $badges;
+    }
     
 }
 
@@ -416,7 +428,6 @@ function resetPassword($email) {
     $response = @mysqli_query($dbc, $sql);
 
     if($response){
-        //echo "<div>Passord sendt.<br>$sql</div>";
         $row = @mysqli_fetch_row($response);
         $id = $row[0];
         $firstname = $row[1];
@@ -428,9 +439,13 @@ function resetPassword($email) {
 
         $to = $email;
         $subject = 'ØKT support';
-        $message = "Hei, $firstname $lastname.<br><br>På anmodning fra vår nettside $date sender vi deg herved innloggingsopplysninger. Klikk <a href='http://westerdals.fredrikhagen.no/reset.php?c=$code&u=$id'>her</a> for å nullstille ditt passord.";
-        $headers = 'From: support@okt.no' . "\r\n" . 'X-Mailer: PHP/' . phpversion();
-        $headers  = 'MIME-Version: 1.0' . "\r\n";
+        if(mysqli_num_rows($response)>0){
+            $message = "Hei, $firstname $lastname.<br><br>På anmodning fra vår nettside $date sender vi deg herved innloggingsopplysninger. Klikk <a href='http://westerdals.fredrikhagen.no/reset.php?c=$code&u=$id'>her</a> for å nullstille ditt passord.";
+        }else{
+            $message = "Hei,<br><br>Vi finner ingen bruker med e-postadressen du oppgir.";
+        }
+        $headers = 'From: ØKT Support <support@okt.no>' . "\r\n" . 'X-Mailer: PHP/' . phpversion();
+        $headers .= 'MIME-Version: 1.0' . "\r\n";
         $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
 
         mail($to, $subject, $message, $headers);
@@ -536,6 +551,7 @@ function setSpending($userId, $value) {
     if($response){
         return 'Normalforbruk registrert.';
     }
+    mysqli_close($dbc);
 }
 
 function setPassword($userId, $password) {
@@ -553,6 +569,7 @@ function setPassword($userId, $password) {
     if($response){
         return 'Nytt passord registrert.';
     }
+    mysqli_close($dbc);
 }
 
 ?>
