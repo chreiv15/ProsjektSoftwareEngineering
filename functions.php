@@ -18,6 +18,22 @@ function norDate($date) {
     $date = date("d.m.y", strtotime($date));
     return $date;
 }
+
+function getDaysUntil($date) {
+/*
+    $today = strtotime(date('Y-m-d'));
+    $date = strtotime($date);
+    $diff = date_diff($today,$date);
+*/
+    
+    $today = date_create(date('Y-m-d'));
+    $end = date_create($date);
+    $diff = date_diff($today,$end);
+    $diff = (array)$diff;
+    $diff = $diff['days'];
+    return $diff;
+}
+
 /*
 ** Calc methods
 */
@@ -104,6 +120,7 @@ function getSprintResult($userId) {
     $resultValues['sprint'] = getCurrentSprint($userId);
     $resultValues['date']['start'] = getCurrentSprintStart($userId);
     $resultValues['date']['end'] = getCurrentSprintEnd($resultValues['date']['start']);
+    $resultValues['date']['diff'] = getDaysUntil($resultValues['date']['end']);
     //echo addSprintResut($userId, $resultValues['sprint'], $resultValues['currentSprintGoal'], $resultValues['saved'], $resultValues['date']['start']);
     $resultValues['badges'] = checkBadgeResult($userId, $resultValues['level'],$resultValues['streak']);
     return $resultValues;        
