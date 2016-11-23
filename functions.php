@@ -216,12 +216,12 @@ function getCurrentGoal($userId) {
     
     require 'dbc.php';
     
-    $sql = 'SELECT value FROM '.dbname.'.dnb_goals WHERE owner = '.$userId.' ORDER BY ID DESC LIMIT 1;';
+    $sql = 'SELECT * FROM '.dbname.'.dnb_goals WHERE owner = '.$userId.' AND date > "'.date('Y-m-d').'" ORDER BY date ASC LIMIT 1;';
 
     $response = @mysqli_query($dbc, $sql);
     
     if($response) {
-        return @mysqli_fetch_row($response)[0];
+        return (array)@mysqli_fetch_row($response);
     }
     mysqli_close($dbc);
     

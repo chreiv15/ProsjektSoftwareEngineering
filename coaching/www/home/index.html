@@ -59,13 +59,13 @@
                 </div>
                 
                 <div class="tabs">
-                    <a class="tab-item" onclick="setActive(this);plusPage(1);">
+                    <a class="tab-item" onclick="setActive(this);plusPage(1);getSprints();">
                         Tidligere økt
                     </a>
-                    <a class="tab-item active" onclick="setActive(this);plusPage(2);">
+                    <a class="tab-item active" onclick="setActive(this);plusPage(2);getCurrentSprint();">
                         Nåværende økt
                     </a>
-                    <a class="tab-item" onclick="setActive(this);plusPage(3);">
+                    <a class="tab-item" onclick="setActive(this);plusPage(3);getCurrentGoal();">
                         Sparemål
                     </a>
                 </div>
@@ -97,12 +97,12 @@
                 <div class="page page2" style="display:block;">
                     <div class="card current-card">
                         <div id="current-card" class="item-text-wrap">
-                            <h4 class="card-title">24.08.16</h4>
+                            <!--h4 class="card-title">24.08.16</h4>
                             <hr>
                             <p class="current-text">Gjenstående beløp <span class="text-success"><br>3700/4100</span></p>
                             <i class="fa fa-cutlery category-icon" aria-hidden="true"></i>
                             <p class="current-days">15 dager gjenstår</p>
-                            <div class="progress-days"></div>
+                            <div class="progress-days"></div-->
                         </div>
                     </div>
                 </div>
@@ -110,11 +110,11 @@
                 <div class="page page3" style="display:none;">
                     <div class="card goal-card">
                         <div id="goal-card" class="item-text-wrap">
-                            <h4 class="card-title">Ditt sparemål er: <span class="text-success">Reise</span></h4>
+                            <!--h4 class="card-title">Ditt sparemål er: <span class="text-success">Reise</span></h4>
                             <hr>
                             
                             <i class="fa fa-plane category-icon" aria-hidden="true"></i>
-                            <p class="current-days">Du har spart <span class="text-success">750</span> kroner denne økten</p>
+                            <p class="current-days">Du har spart <span class="text-success">750</span> kroner denne økten</p-->
                         </div>
                     </div>
                 </div>
@@ -136,19 +136,7 @@
                 btn.addClass("active");
             } 
         }
-        function getSprints() {
-            var user = 5201000;
-            if (window.XMLHttpRequest) {
-                xmlhttp=new XMLHttpRequest();
-            }
-            xmlhttp.onreadystatechange=function() {
-                if (xmlhttp.readyState==4 && xmlhttp.status==200) {
-                    document.getElementById("prior-list").innerHTML=xmlhttp.responseText;
-                }
-            }
-            xmlhttp.open("GET","../ajax/getSprints.php?user="+user,true);
-            xmlhttp.send();
-        }
+        
         function getCurrentSprint() {
             var user = 5201000;
             if (window.XMLHttpRequest) {
@@ -162,8 +150,37 @@
             xmlhttp.open("GET","../ajax/getCurrentSprint.php?user="+user,true);
             xmlhttp.send();
         }
-        getSprints();
         getCurrentSprint();
+        
+        function getSprints() {
+            var user = 5201000;
+            if (window.XMLHttpRequest) {
+                xmlhttp=new XMLHttpRequest();
+            }
+            xmlhttp.onreadystatechange=function() {
+                if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+                    document.getElementById("prior-list").innerHTML=xmlhttp.responseText;
+                }
+            }
+            xmlhttp.open("GET","../ajax/getSprints.php?user="+user,true);
+            xmlhttp.send();
+        }
+        getSprints();
+        
+        function getCurrentGoal() {
+            var user = 5201000;
+            if (window.XMLHttpRequest) {
+                xmlhttp=new XMLHttpRequest();
+            }
+            xmlhttp.onreadystatechange=function() {
+                if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+                    document.getElementById("goal-card").innerHTML=xmlhttp.responseText;
+                }
+            }
+            xmlhttp.open("GET","../ajax/getCurrentGoal.php?user="+user,true);
+            xmlhttp.send();
+        }
+        getCurrentGoal();
     </script>
     
 </html>
