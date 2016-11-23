@@ -58,7 +58,12 @@ hr {
  */
 
 .bar-header {
-    text-align: center; }
+    width: 100%;
+    padding: 30px;
+    text-align: center;
+    position: absolute; }
+.h3-title {
+    color: #007272 !important; }
 .user-card {
     height: 150px;
     width: 70%;
@@ -85,16 +90,18 @@ hr {
     margin: 170px auto 20px; }
 .input-label {
     width: 100%;
-    text-align: center; }
+    color: #5d5d5d;
+    margin: 15px 0 0;
+    text-align: left; }
 .item-input {
     padding: 0; }
 .login-input {
     background: transparent !important;
-    border-bottom: 1px solid #007272 !important; 
+    border: 1px solid #007272 !important; 
     border-radius: 0px !important; }
 .button-login {
-    margin: 30px auto !important;
-}
+    margin: 50px auto !important;
+    border-radius: 0px !important; }
 
 /*
  *    Page 1 / tidligere økt
