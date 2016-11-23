@@ -2,7 +2,7 @@
 
 require_once '../../../functions.php';
 $userId = val($_GET['user']);
-$sprints = (getSprints($userId));
+$sprints = getSprints($userId);
 
 for($i=0;$i<sizeof($sprints);$i++){
     echo '<a class="item item-icon-left" href="#">'."\n\r";
