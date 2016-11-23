@@ -14,6 +14,10 @@ function val($data) {
   return $data;
 }
 
+function norDate($date) {
+    $date = date("d.m.y", strtotime($date));
+    return $date;
+}
 /*
 ** Calc methods
 */
@@ -151,6 +155,24 @@ function getSprintSpending($userId) {
     if($response) {
         $val += @mysqli_fetch_row($response)[0];
         return $val;
+    }
+    mysqli_close($dbc);
+}
+
+function getSprints($userId) {
+    
+    require 'dbc.php';
+    $userId = val($userId);
+    
+    $sql = "SELECT * FROM hagfre15_dnb.dnb_history WHERE user = $userId ORDER BY sprint DESC;";
+    
+    $response = @mysqli_query($dbc, $sql);
+    if($response) {
+        $sprints = array();
+        while($row = mysqli_fetch_assoc($response)) {
+            array_push($sprints,array($row['sprint'],$row['startdate'],getCurrentSprintEnd($row['startdate'])));
+        }
+        return $sprints;
     }
     mysqli_close($dbc);
 }
