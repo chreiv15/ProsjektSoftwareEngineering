@@ -54,7 +54,7 @@
                     <div class="card user-card">
                         <div class="item-text-wrap">
                             <div class="card-pic"></div>
-                            <a><h4 class="profile-card-name">Tommy Sevaldsen</h4></a>
+                            <a><h4 class="profile-card-name" id="user-name">Tommy Sevaldsen</h4></a>
                         </div>
                     </div>
                 </div>
@@ -67,15 +67,15 @@
                 <div class="page profile-page">
                     <div id="prior-list" class="list profile-list">
                         <div class="item item-icon-left item-header">
-                            Personliginformasjon
+                            Personlig informasjon
                         </div>
                         <div class="item item-icon-left">
                             E-post
-                            <input class="profile-input" placeholder="din e-post">
+                            <input class="profile-input" id="user-email" placeholder="din e-post">
                         </div>
                         <div class="item item-icon-left">
                             Telefonnummer
-                            <input class="profile-input" placeholder="ditt nummer">
+                            <input class="profile-input" id="user-phone" placeholder="ditt nummer">
                         </div>
                         
                         <div class="item item-icon-left item-header">
@@ -83,7 +83,7 @@
                         </div>
                         <div class="item item-icon-left">
                             Kontonummer
-                            <input class="profile-input" placeholder="ditt kontonummer">
+                            <input class="profile-input" id ="user-account" placeholder="ditt kontonummer" readonly>
                         </div>
                         
                         <div class="item item-icon-left item-header">
@@ -114,6 +114,58 @@
                 btn.addClass("active");
             } 
         }
+        
+        function getAccountFromId(id) {
+            if (window.XMLHttpRequest) {
+                xmlhttp=new XMLHttpRequest();
+            }
+            xmlhttp.onreadystatechange=function() {
+                if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+                    return xmlhttp.responseText;
+                }
+            }
+            var url = "../ajax/getAccountFromId.php?id="+id;
+            console.log("URL: "+url);
+            xmlhttp.open("GET",url,true);
+            xmlhttp.send();
+        }
+        
+        function getUserInfo(){
+            var config = readCookie("login");
+            try{
+                config = config.split('%7C');
+            }catch(e){
+                console.log("Error");    
+            }
+            var id = config[0];
+            //document.getElementById("user-account").value = config[0];
+            var firstname = config[2];
+            var lastname = config[3];
+            document.getElementById("user-name").innerHTML = config[1]+" "+config[2];
+            var email = config[4];
+            document.getElementById("user-email").value = decodeURIComponent(config[3]);
+            var phone = config[5];
+            document.getElementById("user-phone").value = config[4];
+            var account = getAccountFromId(id);
+            console.log("Account: "+account);
+            document.getElementById("user-account").value = account;
+            //return config;   
+        }
+        
+        function readCookie(cname) {
+           var allcookies = document.cookie;
+           cookiearray = allcookies.split(';');
+           for(var i=0; i<cookiearray.length; i++){
+                var name = cookiearray[i].split('=')[0];
+                if(name.trim() == cname) {
+                    var value = cookiearray[i].split('=')[1];
+                    break;
+                }
+            }
+            return value;
+        }
+        getUserInfo();
+
     </script>
     
 </html>
