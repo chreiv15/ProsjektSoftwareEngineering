@@ -127,15 +127,25 @@ hr {
     margin: 20px 0px;
     text-align: center; }
 .category-icon {
+    margin: 0;
     width: 100%;
     font-size: 74px !important;
     color: #007272;
 }
+.category-icon img {
+    width: 50%;
+}
 .progress-days {
-    height: 20px;
+    height: auto;
     width: 80%;
     margin: 20px auto;
     background: #efefef;
+}
+progress[value] {
+    background-color: #f47b20;
+}
+progress::-webkit-progress-bar-value {
+    background-color: #f47b20;
 }
 
 /*
