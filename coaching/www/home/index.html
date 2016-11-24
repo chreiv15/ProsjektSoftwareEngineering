@@ -53,19 +53,19 @@
                     <div class="card user-card">
                         <div class="item-text-wrap">
                             <div class="card-pic"></div>
-                            <a href="../user/"><h4 class="card-name">Tommy Sevaldsen</h4></a>
+                            <a href="../user/"><h4 class="card-name" id="user-name">Tommy Sevaldsen</h4></a>
                         </div>
                     </div>
                 </div>
                 
                 <div class="tabs">
-                    <a class="tab-item" onclick="setActive(this);plusPage(1);getSprints();">
+                    <a class="tab-item" onclick="setActive(this);plusPage(1);">
                         Tidligere økt
                     </a>
-                    <a class="tab-item active" onclick="setActive(this);plusPage(2);getCurrentSprint();">
+                    <a class="tab-item active" onclick="setActive(this);plusPage(2);">
                         Nåværende økt
                     </a>
-                    <a class="tab-item" onclick="setActive(this);plusPage(3);getCurrentGoal();">
+                    <a class="tab-item" onclick="setActive(this);plusPage(3);">
                         Sparemål
                     </a>
                 </div>
@@ -126,6 +126,9 @@
     </body>
     
     <script type="text/javascript">
+        
+        var path = "http://127.0.0.1:8080/coaching/www";
+        
         function setActive(button) {
             var btn = $(button);
             
@@ -137,7 +140,6 @@
         }
         
         function getUser(email, pin) {
-            //email = encodeURIComponent(email);
             if (window.XMLHttpRequest) {
                 xmlhttp=new XMLHttpRequest();
             }
@@ -147,14 +149,13 @@
                 }
             }
             var url = "../ajax/getUser.php?user="+email+"&password="+pin;
-            console.log(url);
+            console.info(path+url.substr(2));
             xmlhttp.open("GET",url,true);
             xmlhttp.send();
         }
         getUser("ola.nordmann@gmail.com",1234);
         
-        function getCurrentSprint() {
-            var user = 5201000;
+        function getCurrentSprint(user) {
             if (window.XMLHttpRequest) {
                 xmlhttp=new XMLHttpRequest();
             }
@@ -163,13 +164,13 @@
                     document.getElementById("current-card").innerHTML=xmlhttp.responseText;
                 }
             }
-            xmlhttp.open("GET","../ajax/getCurrentSprint.php?user="+user,true);
+            var url = "../ajax/getCurrentSprint.php?user="+user;
+            console.info(path+url.substr(2));
+            xmlhttp.open("GET",url,true);
             xmlhttp.send();
         }
-        getCurrentSprint();
         
-        function getSprints() {
-            var user = 5201000;
+        function getSprints(user) {
             if (window.XMLHttpRequest) {
                 xmlhttp=new XMLHttpRequest();
             }
@@ -178,13 +179,13 @@
                     document.getElementById("prior-list").innerHTML=xmlhttp.responseText;
                 }
             }
-            xmlhttp.open("GET","../ajax/getSprints.php?user="+user,true);
+            var url = "../ajax/getSprints.php?user="+user;
+            console.info(path+url.substr(2));
+            xmlhttp.open("GET",url,true);
             xmlhttp.send();
         }
-        getSprints();
         
-        function getCurrentGoal() {
-            var user = 5201000;
+        function getCurrentGoal(user) {
             if (window.XMLHttpRequest) {
                 xmlhttp=new XMLHttpRequest();
             }
@@ -193,10 +194,41 @@
                     document.getElementById("goal-card").innerHTML=xmlhttp.responseText;
                 }
             }
-            xmlhttp.open("GET","../ajax/getCurrentGoal.php?user="+user,true);
+            var url = "../ajax/getCurrentGoal.php?user="+user;
+            console.info(path+url.substr(2));
+            xmlhttp.open("GET",url,true);
             xmlhttp.send();
         }
-        getCurrentGoal();
+        
+        function getUserInfo(){
+            var config = readCookie("login");
+            try{
+                config = config.split('%7C');
+            }catch(e){
+                console.log("Error");    
+            }
+            var id = config[0];
+            var firstname = config[2];
+            var lastname = config[3];
+            document.getElementById("user-name").innerHTML = config[1]+" "+config[2];
+            getSprints(id);
+            getCurrentGoal(id);
+            getCurrentSprint(id);
+        }
+        
+        function readCookie(cname) {
+            var allcookies = document.cookie;
+            cookiearray = allcookies.split(';');
+            for(var i=0; i<cookiearray.length; i++){
+                var name = cookiearray[i].split('=')[0];
+                if(name.trim() == cname) {
+                    var value = cookiearray[i].split('=')[1];
+                    break;
+                }
+            }
+            return value;
+        }
+        getUserInfo();
     </script>
     
 </html>

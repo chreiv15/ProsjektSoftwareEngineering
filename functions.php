@@ -72,9 +72,9 @@ function getStreakCount($userId) {
     $sql = "SELECT * FROM dnb_history WHERE user = $userId ORDER BY id DESC";
     
     $response = @mysqli_query($dbc, $sql);
+    $streak = 0;
+    $lastSprint = 0;
     if($response) {
-        $streak = 0;
-        $lastSprint = 0;
         while($row = mysqli_fetch_array($response)) {
             if($row['result']>$row['target']) {
                 $streak++;
@@ -92,12 +92,14 @@ function getStreakCount($userId) {
 function getLevel($userId, $spending) {
     
     $before = getBeforeSpending($userId);
-    $percent = (1-$spending/$before)*100;
-    $level = round($percent/2.5,0,PHP_ROUND_HALF_DOWN);
-    if($level>0){
-        return $level;
-    }else{
-        return 0;
+    if(isset($before)){
+        $percent = (1-$spending/$before)*100;
+        $level = round($percent/2.5,0,PHP_ROUND_HALF_DOWN);
+        if($level>0){
+            return $level;
+        }else{
+            return 0;
+        }
     }
 
 }
