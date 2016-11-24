@@ -9,6 +9,8 @@ body * {
         -ms-transition: all 0.2s ease;
             transition: all 0.2s ease;
 }
+.page-padding {
+    padding: 50px; }
 a {
     text-decoration: none; }
 .bg-primary {
@@ -194,10 +196,17 @@ progress::-webkit-progress-bar-value {
     border: none; }
 
 /*
- *    Page 5 / settings
+ *    Page 5 / innstillinger
  */
 
 .settings-page {
+    padding-top: 0; }
+
+/*
+ *    Page 6 / start økt
+ */
+
+.add-page {
     padding-top: 0; }
 
 
