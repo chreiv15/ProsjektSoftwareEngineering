@@ -136,6 +136,23 @@
             } 
         }
         
+        function getUser(email, pin) {
+            //email = encodeURIComponent(email);
+            if (window.XMLHttpRequest) {
+                xmlhttp=new XMLHttpRequest();
+            }
+            xmlhttp.onreadystatechange=function() {
+                if (xmlhttp.readyState==4 && xmlhttp.status==200) {
+                    console.log(xmlhttp.responseText);
+                }
+            }
+            var url = "../ajax/getUser.php?user="+email+"&password="+pin;
+            console.log(url);
+            xmlhttp.open("GET",url,true);
+            xmlhttp.send();
+        }
+        getUser("ola.nordmann@gmail.com",1234);
+        
         function getCurrentSprint() {
             var user = 5201000;
             if (window.XMLHttpRequest) {
