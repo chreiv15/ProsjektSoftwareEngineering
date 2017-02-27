@@ -1,14 +1,20 @@
 <?php
 
-require_once '../functions.php';
+require_once 'dbc.php';
+require_once 'val.php';
 
-$firstname = val($_GET['firstname']);
-$lastname = val($_GET['lastname']);
-$email = val($_GET['email']);
-$phone = val($_GET['phone']);
-$password = val($_GET['password']);
-$password = md5($password);
+$firstname = val($_POST['firstname']);
+$lastname = val($_POST['lastname']);
+$email = val($_POST['email']);
 
-echo addUser($firstname, $lastname, $email, $phone, $password);
+$sql = "INSERT INTO dnb_users (firstname, lastname, email) VALUES('$firstname', '$lastname', '$email')";
+
+$response = @mysqli_query($dbc, $sql);
+
+if($response){
+    echo "OK";
+}
+
+mysqli_close($dbc);
 
 ?>
