@@ -18,49 +18,53 @@
           }
         </script>-->
 
-        <link href="lib/ionic/css/ionic.css" rel="stylesheet">
-        <link href="css/style.css" rel="stylesheet">
-        <link href="css/font-awesome.css" rel="stylesheet">
+        <link href="../lib/ionic/css/ionic.css" rel="stylesheet">
+        <link href="../css/style.css" rel="stylesheet">
+        <link href="../css/font-awesome.css" rel="stylesheet">
 
         <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
         <link href="css/ionic.app.css" rel="stylesheet">
         -->
 
         <!-- jquery framework -->
-        <script src="js/jquery.js"></script>
+        <script src="../js/jquery.js"></script>
 
         <!-- ionic/angularjs js -->
-        <script src="lib/ionic/js/ionic.bundle.js"></script>
+        <script src="../lib/ionic/js/ionic.bundle.js"></script>
         
         <!-- ionic js -->
         <script src="http://ionicframework.com/js/site.js?1:280"></script>
         
         <!-- cordova script (this will be a 404 during development) -->
-        <script src="cordova.js"></script>
+        <script src="../cordova.js"></script>
 
         <!-- custom js -->
-        <script src="js/app.js"></script>
+        <script src="../js/app.js"></script>
+
+        <!-- custom screen js -->
+        <script src="../js/adduser.js"></script>
     </head>
   
     <body ng-app="coacing" class="bg-primary">
 
-        <ion-pane id="login">
+        <ion-pane id="register">
             <div class="bar-header">
-                <h3 class="login-title">Vennligst logg inn</h3>
+                <a href="../" class="btn-link"> <i class="fa fa-angle-left fa-back" aria-hidden="true"></i> </a> 
+                <h3 class="login-title">Opprett bruker</h3>
             </div>
             
             <div class="list login-form">
                 <label class="item-input item-stacked-label">
-                    <input class="login-input" id="email" type="text" placeholder="E-post">
+                    <input class="login-input" id="f-name" type="text" placeholder="Fornavn">
                 </label>
                 <label class="item-input item-stacked-label">
-                    <input class="login-input" id="pin" type="number" placeholder="Pinkode">
+                    <input class="login-input" id="l-name" type="text" placeholder="Etternavn">
+                </label>
+                <label class="item-input item-stacked-label">
+                    <input class="login-input" id="email" type="email" placeholder="E-post">
                 </label>
                 
-                <button class="button button-login button-block button-positive">Logg inn</button>
-                <a href="newuser/">
-                    <button class="button button-login button-register button-block">Opprett bruker</button>
-                </a>
+                <button class="button button-login button-block button-positive">Gå videre</button>
             </div>
             
             <div class="shape-container"></div>
