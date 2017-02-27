@@ -42,29 +42,22 @@
         <script src="../js/app.js"></script>
 
         <!-- custom screen js -->
-        <script src="../js/adduser.js"></script>
+        <script src="../js/addPin.js"></script>
     </head>
   
     <body ng-app="coacing" class="bg-primary">
 
         <ion-pane id="register">
-            <div class="bar-header">
-                <a href="../" class="btn-link"> <i class="fa fa-angle-left fa-back" aria-hidden="true"></i> </a> 
-                <h3 class="login-title">Opprett bruker</h3>
+            <div class="bar-header"> 
+                <h3 class="login-title">Opprett pinkode</h3>
             </div>
             
             <div class="list login-form">
                 <label class="item-input item-stacked-label">
-                    <input class="login-input" id="f-name" type="text" placeholder="Fornavn">
-                </label>
-                <label class="item-input item-stacked-label">
-                    <input class="login-input" id="l-name" type="text" placeholder="Etternavn">
-                </label>
-                <label class="item-input item-stacked-label">
-                    <input class="login-input" id="email" type="email" placeholder="E-post">
+                    <input class="login-input" id="pin" type="number" placeholder="Ønsket pin">
                 </label>
                 
-                <button class="button button-login button-block button-positive" onclick="addUser();">Gå videre</button>
+                <button class="button button-login button-block button-positive" onclick="addPin();">Opprett bruker</button>
             </div>
             
             <div class="shape-container"></div>
