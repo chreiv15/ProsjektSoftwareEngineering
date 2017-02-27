@@ -1,10 +1,28 @@
 <?php
 
-require_once '../functions.php';
+require_once 'dbc.php';
+require_once 'val.php';
 
-$email = val($_GET['user']);
-$password = val($_GET['password']);
+$email = val($_POST['user']);
+pin = val($_POST['pin']);
 
-echo getUser($email, $password);
+$sql = "SELECT * FROM dnb_users WHERE email = '$email' AND pin = $pin LIMIT 1";
+
+$response = @mysqli_query($dbc, $sql);
+
+if(mysqli_num_rows($response)>0){
+    $row = mysqli_fetch_assoc($response);
+    $id = $row['id'];
+    $firstname = $row['firstname'];
+    $lastname = $row['lastname'];
+    $email = $row['email'];
+    $content = "$id|$firstname|$lastname|$email";
+    setcookie("login", $content, time()+3600, "/");
+    echo "OK";
+} else {
+    echo "Epic fail!";
+}
+
+mysqli_close($dbc);
 
 ?>

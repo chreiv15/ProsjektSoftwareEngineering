@@ -24,7 +24,7 @@ if(mysqli_multi_query($dbc,$sql)){
                 $sql = "INSERT INTO dnb_sprints (value, goal) VALUES($sprintGoal, $goalId);";
                 $response = @mysqli_query($dbc, $sql);
                 if($response){
-                    echo $goalId;
+                    echo "OK $goalId";
                 }
             }
         }
