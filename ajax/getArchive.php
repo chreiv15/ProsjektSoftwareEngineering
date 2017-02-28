@@ -3,9 +3,9 @@
 require_once 'dbc.php';
 require_once 'val.php';
 
-$account = val($_POST['account']);
+$userId = val($_POST['userId']);
 
-$sql = "SELECT * FROM dnb_transactions WHERE account = $account";
+$sql = "SELECT * FROM dnb_history WHERE user = $userId";
 
 $response = @mysqli_query($dbc, $sql);
 if($response){

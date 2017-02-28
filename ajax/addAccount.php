@@ -1,11 +1,25 @@
 <?php
 
-require_once 'user.php';
-require_once '../functions.php';
+require_once 'dbc.php';
+require_once 'val.php';
 
-$name = val($_GET['name']);
-$type = val($_GET['type']);
+$name = val($_POST['name']);
+$type = val($_POST['type']);
+$userId = val($_POST['userId']);
 
-echo addAccounts($userId, $type, $name);
+$sql = "INSERT INTO dnb_accounts (name, type, owner) VALUES ('$name',$type, $userId)";
+
+$response = @mysqli_query($dbc, $sql);
+
+if($response){
+    $sql = "SELECT id, name FROM ".dbname.".dnb_accounts WHERE owner = $userId ORDER BY id DESC LIMIT 1";
+    $response = @mysqli_query($dbc, $sql);
+    $row = @mysqli_fetch_assoc($response);
+    $accountId = $row['id'];
+    $accountName = $row['name'];
+    echo $accountId;
+}
+
+mysqli_close($dbc);
 
 ?>
