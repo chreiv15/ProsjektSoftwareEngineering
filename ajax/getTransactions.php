@@ -5,7 +5,7 @@ require_once 'val.php';
 
 $account = val($_POST['account']);
 
-$sql = "SELECT * FROM dnb_transactions WHERE account = $account";
+$sql = "SELECT * FROM dnb_transactions WHERE account = $account ORDER BY id DESC";
 
 $response = @mysqli_query($dbc, $sql);
 if($response){

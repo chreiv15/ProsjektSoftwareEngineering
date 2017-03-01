@@ -2,13 +2,13 @@
 
 $user = 5201000;
 
-
 ?>
 <head>
     <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <style>
-        p,a,input,label,td {
+        p,a,input,label,td,th {
             font-family: sans-serif;
             font-size: 16px;
         }
@@ -50,63 +50,20 @@ $user = 5201000;
         #transactionTable {
             margin: 0 auto;
         }
-        #transactionTable td:nth-child(1) {
+        #transactions th {
+            text-align: left;
+        }
+        #transactions td:nth-child(1) {
             width: 200px;
+            padding-right: 10px;
         }
         #transactions {
-            margin-top: 20px;
+            margin: 0 auto;
+            padding: 25px;
+            border: 1px solid #222;
         }
     </style>
-    <script>
-        var account = 97348898349;
-        function buy(){
-            document.getElementById("result").innerHTML = "<p>Kjøper...</p>";
-            document.getElementById("registerSound").play();
-            console.log("Buy "+this.parentNode.id);
-            var nodes = this.parentNode.childNodes;
-            var price = nodes[7].value;
-            console.log(price+" kr");
-            var ids = ['grc','cof','kaf','drk','dlv'];
-            var catg = ids.indexOf(this.parentNode.id);
-            var descriptions = ['Dagligvarer','Kaffe','Lunsj i kafeteria','Drinker/alkohol','Matlevering på døren'];
-            var desc = descriptions[catg];
-            console.log(desc);
-            submit(desc,price,catg,account);
-        }
-        function submit(desc,price,catg,account){
-            console.log(desc+" til "+price+" kr, kategori "+catg);
-            if (window.XMLHttpRequest) {
-                xmlhttp=new XMLHttpRequest();
-            }
-            xmlhttp.onreadystatechange=function() {
-                if (xmlhttp.readyState==4 && xmlhttp.status==200) {
-                    var result = document.getElementById("result");
-                    result.innerHTML=xmlhttp.responseText;
-                    setTimeout(function(){ result.innerHTML=""; }, 3000);
-                    getTransactions(account);
-                }
-            }
-            var url = "../ajax/addTransaction.php?description="+desc+"&value="+price+"&category="+catg+"&account="+account;
-            console.log(url);
-            xmlhttp.open("GET",url,true);
-            xmlhttp.send();
-        }
-        function getTransactions(account){
-            if (window.XMLHttpRequest) {
-                xmlhttp=new XMLHttpRequest();
-            }
-            xmlhttp.onreadystatechange=function() {
-                if (xmlhttp.readyState==4 && xmlhttp.status==200) {
-                    var result = document.getElementById("transactions");
-                    result.innerHTML=xmlhttp.responseText;
-                }
-            }
-            var url = "../ajax/getTransactions.php?account="+account;
-            console.log(url);
-            xmlhttp.open("GET",url,true);
-            xmlhttp.send();
-        }
-    </script>
+    <script src="scripts.js"></script>
 </head>
 
 <main>
@@ -145,7 +102,16 @@ $user = 5201000;
         <source src="register.ogg" type="audio/ogg" hidden>
     </audio>
     <div id="result"></div>
-    <div id="transactions"></div>
+    <table id="transactions">
+        <thead>
+            <tr>
+                <th>Navn</th>
+                <th>Verdi</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
 </main>
 <script>
 
