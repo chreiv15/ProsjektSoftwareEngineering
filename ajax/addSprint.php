@@ -9,7 +9,7 @@
     $goalName = val($_POST['goalName']);
     $goalValue = val($_POST['goalValue']);
     $goalCategory = val($_POST['goalCategory']);
-    $goalTargetDate = val($_POST['goalCategory']);
+    $goalTargetDate = val($_POST['goalTargetDate']);
 
     $sql = "INSERT INTO dnb_goals (name, value, date, category, owner) VALUES('$goalName', $goalValue, '$goalTargetDate', $goalCategory, $userId);";
     $sql .= "UPDATE dnb_users SET before = '$beforeSpending' WHERE id = $userId";
