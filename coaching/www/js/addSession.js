@@ -39,6 +39,7 @@ function wantGoal() {
 
                 var item = document.createElement('div');
                 item.onclick = addGoal;
+                item.id = id;
                 item.id = data[i].id;
                 item.className = "item item-icon-left text-left";
                 item.innerHTML = data[i].name;
