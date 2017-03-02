@@ -38,8 +38,6 @@
         <!-- cordova script (this will be a 404 during development) -->
         <script src="../cordova.js"></script>
 
-        <!-- custom js -->
-        <script src="../js/app.js"></script>
     </head>
   
     <body ng-app="coacing">
@@ -129,12 +127,13 @@
             <ion-content>
             </ion-content>
         </ion-pane>
+        
+        <!-- custom js -->
+        <script src="../js/app.js"></script>
 
     </body>
     
     <script type="text/javascript">
-        
-        var path = "http://127.0.0.1:8080/coaching/www";
         
         function setActive(button) {
             var btn = $(button);
@@ -146,96 +145,6 @@
             } 
         }
         
-        function getUser(email, pin) {
-            if (window.XMLHttpRequest) {
-                xmlhttp=new XMLHttpRequest();
-            }
-            xmlhttp.onreadystatechange=function() {
-                if (xmlhttp.readyState==4 && xmlhttp.status==200) {
-                    console.log(xmlhttp.responseText);
-                }
-            }
-            var url = "../ajax/getUser.php?user="+email+"&password="+pin;
-            console.info(path+url.substr(2));
-            xmlhttp.open("GET",url,true);
-            xmlhttp.send();
-        }
-        getUser("ola.nordmann@gmail.com",1234);
-        
-        function getCurrentSprint(user) {
-            if (window.XMLHttpRequest) {
-                xmlhttp=new XMLHttpRequest();
-            }
-            xmlhttp.onreadystatechange=function() {
-                if (xmlhttp.readyState==4 && xmlhttp.status==200) {
-                    document.getElementById("current-card").innerHTML=xmlhttp.responseText;
-                }
-            }
-            var url = "../ajax/getCurrentSprint.php?user="+user;
-            console.info(path+url.substr(2));
-            xmlhttp.open("GET",url,true);
-            xmlhttp.send();
-        }
-        
-        function getSprints(user) {
-            if (window.XMLHttpRequest) {
-                xmlhttp=new XMLHttpRequest();
-            }
-            xmlhttp.onreadystatechange=function() {
-                if (xmlhttp.readyState==4 && xmlhttp.status==200) {
-                    document.getElementById("prior-list").innerHTML=xmlhttp.responseText;
-                }
-            }
-            var url = "../ajax/getSprints.php?user="+user;
-            console.info(path+url.substr(2));
-            xmlhttp.open("GET",url,true);
-            xmlhttp.send();
-        }
-        
-        function getCurrentGoal(user) {
-            if (window.XMLHttpRequest) {
-                xmlhttp=new XMLHttpRequest();
-            }
-            xmlhttp.onreadystatechange=function() {
-                if (xmlhttp.readyState==4 && xmlhttp.status==200) {
-                    document.getElementById("goal-card").innerHTML=xmlhttp.responseText;
-                }
-            }
-            var url = "../ajax/getCurrentGoal.php?user="+user;
-            console.info(path+url.substr(2));
-            xmlhttp.open("GET",url,true);
-            xmlhttp.send();
-        }
-        
-        function getUserInfo(){
-            var config = readCookie("login");
-            try{
-                config = config.split('%7C');
-            }catch(e){
-                console.log("Error");    
-            }
-            var id = config[0];
-            var firstname = config[2];
-            var lastname = config[3];
-            document.getElementById("user-name").innerHTML = config[1]+" "+config[2];
-            getSprints(id);
-            getCurrentGoal(id);
-            getCurrentSprint(id);
-        }
-        
-        function readCookie(cname) {
-            var allcookies = document.cookie;
-            cookiearray = allcookies.split(';');
-            for(var i=0; i<cookiearray.length; i++){
-                var name = cookiearray[i].split('=')[0];
-                if(name.trim() == cname) {
-                    var value = cookiearray[i].split('=')[1];
-                    break;
-                }
-            }
-            return value;
-        }
-        getUserInfo();
     </script>
     
 </html>

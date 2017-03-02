@@ -48,7 +48,6 @@ function showPage(n) {
 
 
 function getCookie(cname) {
-    console.log('Fetching cookie');
     var name = cname + "=";
     var ca = document.cookie.split(';');
     for(var i = 0; i <ca.length; i++) {
@@ -68,19 +67,10 @@ function getCookie(cname) {
 
 function readLogin(){
     
-login = getCookie("login")
-/*
-    login['access'] = parseInt(login['access']);
-    login['groupId'] = parseInt(login['groupId']);
-    login['budget'] = parseInt(login['budget']);
-    login['userId'] = parseInt(login['userId']);
-    login['active'] = parseInt(login['active']);
-    login['userName'] = login['userName'].replaceAll('+',' ');
-    login['groupName'] = login['groupName'].replaceAll('+',' ');
-*/
+    login = getCookie("login");
+    login['id'] = parseInt(login['id']);
     console.log(login);
     window.login = login;
     $('#user-name').html(login.firstname+' '+login.lastname);
 }
-
 readLogin();
