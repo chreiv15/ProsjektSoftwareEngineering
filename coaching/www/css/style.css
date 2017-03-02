@@ -5,13 +5,14 @@
  */
 
 body * {
-    -webkit-transition: all 0.2s ease;
-        -ms-transition: all 0.2s ease;
-            transition: all 0.2s ease;
+    -webkit-transition: all 0.2s ease !important;
+        -ms-transition: all 0.2s ease !important;
+            transition: all 0.2s ease !important;
 }
 .page-padding {
     padding: 50px; }
 a {
+    color: inherit !important;
     text-decoration: none; }
 .bg-primary {
     background: #efefef; }
@@ -36,6 +37,26 @@ hr {
     margin: 15px auto;
     box-shadow: none; }
 
+.text-left {
+    text-align: left;
+}
+
+.hide {
+    display: none !important;
+}
+.show {
+    display: block !important;
+}
+
+/* Icons */
+.goal-icon {
+    height: 20px;
+}
+.list-icon {
+    float: right;
+}
+/* /Icons */
+
 /* Button styles */
 .button {
     background: transparent !important;
@@ -51,7 +72,7 @@ hr {
 .item-header {
     background: transparent;
     padding: 10px 25px;
-    margin-top: 20px;
+    margin: 15px 0 15px;
     border-color: transparent; }
 /* /List */
 
@@ -175,8 +196,8 @@ progress::-webkit-progress-bar-value {
  *    Page 4 / brukerprofil
  */
 
-.user-profile .tabs-top .bar-header {
-    position: relative;
+.tabs-top .bar-header {
+    position: relative !important;
 }
 .fa-back, .fa-settings {
     width: 50px;

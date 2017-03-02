@@ -38,13 +38,13 @@
         <!-- cordova script (this will be a 404 during development) -->
         <script src="../cordova.js"></script>
 
-        <!-- custom js -->
-        <script src="../js/app.js"></script>
+        <!-- custom screen js -->
+        <script src="../js/addSession.js"></script>
     </head>
   
     <body ng-app="coacing">
 
-        <ion-pane class="user-profile">
+        <ion-pane class="add-session">
             
             <div class="tabs-striped tabs-top tabs-background-positive tabs-color-light">
                 <div class="bar bar-header">
@@ -54,31 +54,72 @@
             </div>
             
             <div class="pages-container">
-                <div class="page add-page">
-                    <div id="prior-list" class="list profile-list">
-                        <div class="item item-icon-left item-header text-center">
-                            Steg 1 - Hva vil du spare penger på?
+                <div id="add-goal">
+                    <div class="page add-page">
+                        <div id="prior-list" class="list profile-list">
+                            <div class="item item-icon-left item-header text-center">
+                                Steg 1 - Hva vil du spare penger på?
+                            </div>
+                            <div onClick="startGoal(1);" class="item item-icon-left text-left">
+                                Klær<img class="goal-icon list-icon" src="../img/icon-kl%C3%A6r.svg" />
+                            </div>
+                            <div onClick="startGoal(2);" class="item item-icon-left text-left">
+                               Mat og drikke
+                            </div>
+                            <div onClick="startGoal(3);" class="item item-icon-left text-left">
+                                Livsstil
+                            </div>
+                            <div onClick="startGoal(4);" class="item item-icon-left text-left">
+                                Eletronikk<img class="goal-icon list-icon" src="../img/icon-konsoll.svg" />
+                            </div>
+                            <!--div class="item item-icon-left text-center">
+                                Egendefinert
+                            </div-->
+
+                            <div class="item item-icon-left item-header">
+                            </div>
+                            <!--div class="item item-icon-left item-save">
+                                Neste
+                            </div-->
                         </div>
-                        <div class="item item-icon-left text-center">
-                            Klær
+                    </div>
+                </div>
+                
+                <div id="test">
+                    <div class="page add-page">
+                        <div id="prior-list" class="list profile-list">
+                            <div class="item item-icon-left item-header text-center">
+                                Steg 2 - Har du et sparemål?
+                            </div>
+                            <div onClick="" class="item item-icon-left text-left">
+                                Nei
+                            </div>
+                            <div onClick="" class="item item-icon-left text-left">
+                                Ja
+                            </div>
+                            
+                            <div class="item item-icon-left item-header">
+                            </div>
+                            
+                            <div id="goal">
+                                <div onClick="startGoal(2);" class="item item-icon-left text-left">
+                                    Reise
+                                </div>
+                                <div onClick="startGoal(3);" class="item item-icon-left text-left">
+                                    Egendefinert
+                                </div>
+                            </div>
                         </div>
-                        <div class="item item-icon-left text-center">
-                            Mat og drikke
-                        </div>
-                        <div class="item item-icon-left text-center">
-                            Livsstil
-                        </div>
-                        <div class="item item-icon-left text-center">
-                            Eletronikk
-                        </div>
-                        <div class="item item-icon-left text-center">
-                            Egendefinert
-                        </div>
-                        
-                        <div class="item item-icon-left item-header">
-                        </div>
-                        <div class="item item-icon-left item-save">
-                            Neste
+                    </div>
+                            <!--div class="item item-icon-left text-center">
+                                Egendefinert
+                            </div-->
+
+                            <div class="item item-icon-left item-header">
+                            </div>
+                            <!--div class="item item-icon-left item-save">
+                                Neste
+                            </div-->
                         </div>
                     </div>
                 </div>
