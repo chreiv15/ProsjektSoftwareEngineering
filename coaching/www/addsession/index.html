@@ -54,22 +54,22 @@
             </div>
             
             <div class="pages-container">
-                <div id="add-goal">
+                <div id="step1">
                     <div class="page add-page">
                         <div id="prior-list" class="list profile-list">
                             <div class="item item-icon-left item-header text-center">
                                 Steg 1 - Hva vil du spare penger på?
                             </div>
-                            <div onClick="startGoal(1);" class="item item-icon-left text-left">
+                            <div onClick="setGoal(1);" class="item item-icon-left text-left">
                                 Klær<img class="goal-icon list-icon" src="../img/icon-kl%C3%A6r.svg" />
                             </div>
-                            <div onClick="startGoal(2);" class="item item-icon-left text-left">
+                            <div onClick="setGoal(2);" class="item item-icon-left text-left">
                                Mat og drikke
                             </div>
-                            <div onClick="startGoal(3);" class="item item-icon-left text-left">
+                            <div onClick="setGoal(3);" class="item item-icon-left text-left">
                                 Livsstil
                             </div>
-                            <div onClick="startGoal(4);" class="item item-icon-left text-left">
+                            <div onClick="setGoal(4);" class="item item-icon-left text-left">
                                 Eletronikk<img class="goal-icon list-icon" src="../img/icon-konsoll.svg" />
                             </div>
                             <!--div class="item item-icon-left text-center">
@@ -85,41 +85,40 @@
                     </div>
                 </div>
                 
-                <div id="test">
+                <div id="step2">
                     <div class="page add-page">
                         <div id="prior-list" class="list profile-list">
                             <div class="item item-icon-left item-header text-center">
                                 Steg 2 - Har du et sparemål?
                             </div>
-                            <div onClick="" class="item item-icon-left text-left">
+                            <div onClick="addGoal(0);" class="item item-icon-left text-left">
                                 Nei
                             </div>
-                            <div onClick="" class="item item-icon-left text-left">
+                            <div onClick="wantGoal();" class="item item-icon-left text-left">
                                 Ja
                             </div>
                             
                             <div class="item item-icon-left item-header">
                             </div>
                             
-                            <div id="goal">
-                                <div onClick="startGoal(2);" class="item item-icon-left text-left">
+                            <div id="session-goal">
+                                <div onClick="addGoal(1);" class="item item-icon-left text-left">
                                     Reise
-                                </div>
-                                <div onClick="startGoal(3);" class="item item-icon-left text-left">
-                                    Egendefinert
                                 </div>
                             </div>
                         </div>
                     </div>
-                            <!--div class="item item-icon-left text-center">
-                                Egendefinert
-                            </div-->
-
-                            <div class="item item-icon-left item-header">
+                </div>
+                
+                <div id="step3">
+                    <div class="page add-page">
+                        <div id="prior-list" class="list profile-list">
+                            <div class="item item-icon-left item-header text-center">
+                                Steg 3 - Spørsmål?
                             </div>
-                            <!--div class="item item-icon-left item-save">
-                                Neste
-                            </div-->
+                            <div class="item item-icon-left item-save">
+                                Start økt
+                            </div>
                         </div>
                     </div>
                 </div>

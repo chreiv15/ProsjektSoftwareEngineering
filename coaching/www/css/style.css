@@ -156,6 +156,20 @@ hr {
     margin-top: 50% !important;}
 
 /*
+ *    Page 0.1 / start økt
+ */
+
+#step2,
+#step3 {
+    display: none;
+}
+
+#session-goal {
+    display: none;
+}
+
+
+/*
  *    Page 1 / tidligere økt
  */
 
