@@ -37,9 +37,6 @@
 
         <!-- cordova script (this will be a 404 during development) -->
         <script src="../cordova.js"></script>
-
-        <!-- custom screen js -->
-        <script src="../js/addSession.js"></script>
     </head>
   
     <body ng-app="coacing">
@@ -115,10 +112,14 @@
                                 Steg 3 - Hvor mye vil du spare?
                             </div>
                             <div class="item item-icon-left">
-                                <input type="number" class="profile-input" id ="user-account" placeholder="f.eks '2500'">
+                                <input type="number" class="profile-input" id ="session-savings" placeholder="f.eks '2500'">
                             </div>
                             
                             <div class="item item-icon-left item-header">
+                            </div>
+                            
+                            <div id="has-goal">
+                            
                             </div>
                             
                             <div onclick="startSesstion();" class="item item-icon-left item-save">
@@ -132,6 +133,9 @@
             <ion-content>
             </ion-content>
         </ion-pane>
+        
+        <!-- custom screen js -->
+        <script src="../js/addSession.js"></script>
 
     </body>
     
