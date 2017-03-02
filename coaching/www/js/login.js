@@ -9,7 +9,6 @@ $("#submit").click(function(){
         pin: $('#pin').val()
     },
     function(data, status){
-        //data = JSON.parse(data);
         console.log(data);
         window.location = './home/';
     });
