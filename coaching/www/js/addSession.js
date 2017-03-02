@@ -1,5 +1,8 @@
 var session = "";
-var goal; 
+var goalID;
+var goalName;
+
+var hasGoal = false;
 
 function setGoal(id) {
     switch (id) {
@@ -29,6 +32,8 @@ function setGoal(id) {
 }
 
 function wantGoal() {
+    hasGoal = true;
+    
     $("#session-goal").addClass("show");
 
     $.post("../../../ajax/getCategories.php", {},
@@ -39,14 +44,14 @@ function wantGoal() {
 
                 var item = document.createElement('div');
                 item.onclick = addGoal;
-                item.id = id;
                 item.id = data[i].id;
                 item.className = "item item-icon-left text-left";
                 item.innerHTML = data[i].name;
                 $("#session-goal").append(item);
 
             }
-        });
+        }
+    );
 }
 
 function addGoal(id) {
@@ -55,6 +60,10 @@ function addGoal(id) {
     $("#step2").removeClass("show");
     $("#step2").addClass("hide");
     $("#step3").addClass("show");
+    
+    if (hasGoal) {
+        $("#has-goal").append("<div class='item item-icon-left'>Skriv inn navnet på ditt sparemål<input type='text' class='profile-input' id='session-goalname' placeholder='f.eks Playstation' /></div>");
+    }
 }
 
 function setActive(button) {
@@ -68,18 +77,18 @@ function setActive(button) {
 }
 
 function startSesstion() {
-//    $.post("../../../ajax/addPassword.php", {
-//        function: 'function', 
-//        userId: 5201044,
-//        sprintGoal: ,
-//        beforeSpending: ,
-//        goalName: ,
-//        goalValue: ,
-//        goalCategory: ,
-//        goalTargetDate: 
-//    }, function(data) {
-//        console.log(data);
-//        window.location = '../addsession/';
-//    });
-//    
+    $.post("../../../ajax/addPassword.php", {
+        function: 'function', 
+        userId: 5201044,
+        sprintGoal: 34,
+        beforeSpending: 121,
+        goalName: $("#session-goalname").val(),
+        goalValue: $("#session-savings").val(),
+        goalCategory: goal,
+        goalTargetDate: 20
+    }, function(data) {
+        console.log(data);
+        window.location = '../addsession/';
+    });
+    
 }
