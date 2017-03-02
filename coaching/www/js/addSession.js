@@ -38,7 +38,7 @@ function wantGoal() {
 
                 var item = document.createElement('div');
                 item.onclick = addGoal;
-                item.id = id;
+                item.id = data[i].id;
                 item.className = "item item-icon-left text-left";
                 item.innerHTML = data[i].name;
                 $("#session-goal").append(item);
@@ -55,14 +55,8 @@ function addGoal(id) {
     $("#step3").addClass("show");
 }
 
-function setActive(button) {
-    var btn = $(button);
-
-    $(".active").removeClass("active");
-
-    if (!btn.hasClass("active")) {
-        btn.addClass("active");
-    }
+function startSesstion() {
+    
 }
 
 function getAccountFromId(id) {
