@@ -30,22 +30,7 @@ function setGoal(id) {
 
 function wantGoal() {
     $("#session-goal").addClass("show");
-    $.post("../../../ajax/getCategories.php", {
-    },
-    function(data){
-        data = JSON.parse(data);
-        console.log(data);
-        for(var i=0;i<data.length;i++){
-            
-            var item = document.createElement('div');
-            item.onclick = addGoal;
-            item.id = data[i].id;
-            item.className = "item item-icon-left text-left";
-            item.innerHTML = data[i].name;
-            $("#session-goal").append(item);
-            
-        }
-    });
+
     $.post("../../../ajax/getCategories.php", {},
         function (data) {
             data = JSON.parse(data);
@@ -83,7 +68,20 @@ function setActive(button) {
 }
 
 function startSesstion() {
-    alert();
+//    $.post("../../../ajax/addPassword.php", {
+//        function: 'function', 
+//        userId: 5201044,
+//        sprintGoal: ,
+//        beforeSpending: ,
+//        goalName: ,
+//        goalValue: ,
+//        goalCategory: ,
+//        goalTargetDate: 
+//    }, function(data) {
+//        console.log(data);
+//        window.location = '../addsession/';
+//    });
+//    
 }
 //
 //function getAccountFromId(id) {

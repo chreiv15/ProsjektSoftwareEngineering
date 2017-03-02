@@ -74,12 +74,16 @@ hr {
     padding: 10px 25px;
     margin: 15px 0 15px;
     border-color: transparent; }
+
 /* /List */
 
 /*
  *    Header
  */
 
+#main-header {
+    position: fixed !important;
+}
 .user-card {
     height: 150px;
     width: 70%;
@@ -97,6 +101,9 @@ hr {
     color: #fff; }
 .tabs {
     box-shadow: 0px 2px 10px rgba(36, 36, 36, 0.7); }
+.tabs-top.tabs-striped .tab-item {
+    color: #efefef !important;
+}
 
 /*
  *    Page 0 / innlogging / registrering
