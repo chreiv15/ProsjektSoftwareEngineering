@@ -31,6 +31,7 @@ function setGoal(id) {
 function wantGoal() {
     $("#session-goal").addClass("show");
 <<<<<<< HEAD
+<<<<<<< HEAD
     $.post("../../../ajax/getCategories.php", {
     },
     function(data){
@@ -48,6 +49,8 @@ function wantGoal() {
         }
     });
 =======
+=======
+>>>>>>> d2509d09974c143710a65e5bcf78befd98094503
     $.post("../../../ajax/getCategories.php", {},
         function (data) {
             data = JSON.parse(data);
@@ -56,14 +59,21 @@ function wantGoal() {
 
                 var item = document.createElement('div');
                 item.onclick = addGoal;
+<<<<<<< HEAD
                 item.id = id;
+=======
+                item.id = data[i].id;
+>>>>>>> d2509d09974c143710a65e5bcf78befd98094503
                 item.className = "item item-icon-left text-left";
                 item.innerHTML = data[i].name;
                 $("#session-goal").append(item);
 
             }
         });
+<<<<<<< HEAD
 >>>>>>> 6d6112989985eed229e7d4e8de7f691ab0a7fba5
+=======
+>>>>>>> d2509d09974c143710a65e5bcf78befd98094503
 }
 
 function addGoal(id) {
@@ -82,6 +92,10 @@ function setActive(button) {
     if (!btn.hasClass("active")) {
         btn.addClass("active");
     }
+=======
+function startSesstion() {
+    
+>>>>>>> d2509d09974c143710a65e5bcf78befd98094503
 }
 
 function getAccountFromId(id) {
