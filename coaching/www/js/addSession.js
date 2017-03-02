@@ -1,5 +1,5 @@
 var session = "";
-var goal = "";
+var goal;
 
 function setGoal(id) {    
     switch(id) {
@@ -30,8 +30,7 @@ function setGoal(id) {
 
 function wantGoal() {
     $("#session-goal").addClass("show");
-    $.post("../../../ajax/getCategories.php", {
-    },
+    $.post("../../../ajax/getCategories.php", {    },
     function(data){
         data = JSON.parse(data);
         console.log(data);
@@ -49,31 +48,7 @@ function wantGoal() {
 }
 
 function addGoal(id) {
-        switch(id) {
-        case 0:
-            goal = "NA";
-            break;
-            
-        case 1:
-            goal = "travel";
-            break;
-            
-        case 2:
-            goal = "food";
-            break;
-            
-        case 3:
-            goal = "lifestyle";
-            break;
-            
-        case 4:
-            goal = "electronics";
-            break;
-            
-        default:
-            goal = "undefined";
-            break;
-    }
+    goal = id;
     
     $("#step2").removeClass("show");
     $("#step2").addClass("hide");    
