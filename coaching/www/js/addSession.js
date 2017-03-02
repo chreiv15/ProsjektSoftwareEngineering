@@ -30,13 +30,21 @@ function setGoal(id) {
 
 function wantGoal() {
     $("#session-goal").addClass("show");
-        
     $.post("../../../ajax/getCategories.php", {
-        function: 'function'
-    }, function(data) {
+    },
+    function(data){
         data = JSON.parse(data);
         console.log(data);
-        //$("#session-goal").JSON.parse(data);
+        for(var i=0;i<data.length;i++){
+            
+            var item = document.createElement('div');
+            item.onclick = addGoal;
+            item.id = id;
+            item.className = "item item-icon-left text-left";
+            item.innerHTML = data[i].name;
+            $("#session-goal").append(item);
+            
+        }
     });
 }
 
