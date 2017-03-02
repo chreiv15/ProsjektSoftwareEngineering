@@ -35,27 +35,27 @@ function wantGoal() {
 function addGoal(id) {
         switch(id) {
         case 0:
-            session = "NA";
+            goal = "NA";
             break;
             
         case 1:
-            session = "travel";
+            goal = "travel";
             break;
             
         case 2:
-            session = "food";
+            goal = "food";
             break;
             
         case 3:
-            session = "lifestyle";
+            goal = "lifestyle";
             break;
             
         case 4:
-            session = "electronics";
+            goal = "electronics";
             break;
             
         default:
-            session = "undefined";
+            goal = "undefined";
             break;
     }
     
