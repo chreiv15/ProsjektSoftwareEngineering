@@ -1,5 +1,5 @@
 var session = "";
-var goal;
+var goal; 
 
 function setGoal(id) {
     switch (id) {
@@ -80,59 +80,60 @@ function setActive(button) {
     if (!btn.hasClass("active")) {
         btn.addClass("active");
     }
+}
 
 function startSesstion() {
-    
+    alert();
 }
-
-function getAccountFromId(id) {
-    if (window.XMLHttpRequest) {
-        xmlhttp = new XMLHttpRequest();
-    }
-    xmlhttp.onreadystatechange = function () {
-        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            return xmlhttp.responseText;
-        }
-    }
-    var url = "../ajax/getAccountFromId.php?id=" + id;
-    console.log("URL: " + url);
-    xmlhttp.open("GET", url, true);
-    xmlhttp.send();
-}
-
-function getUserInfo() {
-    var config = readCookie("login");
-    try {
-        config = config.split('%7C');
-    } catch (e) {
-        console.log("Error");
-    }
-    var id = config[0];
-    //document.getElementById("user-account").value = config[0];
-    var firstname = config[2];
-    var lastname = config[3];
-    document.getElementById("user-name").innerHTML = config[1] + " " + config[2];
-    var email = config[4];
-    document.getElementById("user-email").value = decodeURIComponent(config[3]);
-    var phone = config[5];
-    document.getElementById("user-phone").value = config[4];
-    var account = getAccountFromId(id);
-    console.log("Account: " + account);
-    document.getElementById("user-account").value = account;
-    //return config;   
-}
-
-function readCookie(cname) {
-    var allcookies = document.cookie;
-    cookiearray = allcookies.split(';');
-    for (var i = 0; i < cookiearray.length; i++) {
-        var name = cookiearray[i].split('=')[0];
-        if (name.trim() == cname) {
-            var value = cookiearray[i].split('=')[1];
-            break;
-        }
-    }
-    return value;
-}
-
-getUserInfo();
+//
+//function getAccountFromId(id) {
+//    if (window.XMLHttpRequest) {
+//        xmlhttp = new XMLHttpRequest();
+//    }
+//    xmlhttp.onreadystatechange = function () {
+//        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+//            return xmlhttp.responseText;
+//        }
+//    }
+//    var url = "../ajax/getAccountFromId.php?id=" + id;
+//    console.log("URL: " + url);
+//    xmlhttp.open("GET", url, true);
+//    xmlhttp.send();
+//}
+//
+//function getUserInfo() {
+//    var config = readCookie("login");
+//    try {
+//        config = config.split('%7C');
+//    } catch (e) {
+//        console.log("Error");
+//    }
+//    var id = config[0];
+//    //document.getElementById("user-account").value = config[0];
+//    var firstname = config[2];
+//    var lastname = config[3];
+//    document.getElementById("user-name").innerHTML = config[1] + " " + config[2];
+//    var email = config[4];
+//    document.getElementById("user-email").value = decodeURIComponent(config[3]);
+//    var phone = config[5];
+//    document.getElementById("user-phone").value = config[4];
+//    var account = getAccountFromId(id);
+//    console.log("Account: " + account);
+//    document.getElementById("user-account").value = account;
+//    //return config;   
+//}
+//
+//function readCookie(cname) {
+//    var allcookies = document.cookie;
+//    cookiearray = allcookies.split(';');
+//    for (var i = 0; i < cookiearray.length; i++) {
+//        var name = cookiearray[i].split('=')[0];
+//        if (name.trim() == cname) {
+//            var value = cookiearray[i].split('=')[1];
+//            break;
+//        }
+//    }
+//    return value;
+//}
+//
+//getUserInfo();
