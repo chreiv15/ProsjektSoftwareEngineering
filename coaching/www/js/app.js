@@ -69,6 +69,11 @@ function readLogin(){
     
     login = getCookie("login");
     login['id'] = parseInt(login['id']);
+    login['goalId'] = parseInt(login['goalId']);
+    login['goalValue'] = parseFloat(login['goalValue']);
+    login['beforeSpending'] = parseFloat(login['beforeSpending']);
+    login['accountValue'] = parseFloat(login['accountValue']);
+    login['accountId'] = parseInt(login['accountId']);
     console.log(login);
     window.login = login;
     $('#user-name').html(login.firstname+' '+login.lastname);
