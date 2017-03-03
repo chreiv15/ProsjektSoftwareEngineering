@@ -21,6 +21,7 @@ if(mysqli_num_rows($response)>0){
     $beforeSpending = $row['beforeSpending'];
     $goalValue = $row['goalValue'];
     $goalId = $row['goalId'];
+    $sprintId = $row['sprintId'];
     $sprintStart = $row['sprintStart'];
     
     $json = array();
@@ -34,6 +35,7 @@ if(mysqli_num_rows($response)>0){
     $json['goalId'] = $goalId;
     $json['goalValue'] = $goalValue;
     $json['sprintStart'] = substr($sprintStart,0,10);
+    $json['sprintId'] = $sprintId;
     $json = json_encode($json);
     setcookie("login", $json, time()+3600, "/");
     echo "OK";

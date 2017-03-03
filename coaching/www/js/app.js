@@ -74,7 +74,7 @@ function readLogin(){
     login['beforeSpending'] = parseFloat(login['beforeSpending']);
     login['accountValue'] = parseFloat(login['accountValue']);
     login['accountId'] = parseInt(login['accountId']);
-    console.log(login);
+    login['sprintId'] = parseInt(login['sprintId']);
     window.login = login;
     $('#user-name').html(login.firstname+' '+login.lastname);
 }

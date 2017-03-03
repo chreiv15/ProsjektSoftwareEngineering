@@ -141,7 +141,12 @@ function readLogin(){
     
     login = getCookie("login");
     login['id'] = parseInt(login['id']);
-    console.log(login);
+    login['goalId'] = parseInt(login['goalId']);
+    login['goalValue'] = parseFloat(login['goalValue']);
+    login['beforeSpending'] = parseFloat(login['beforeSpending']);
+    login['accountValue'] = parseFloat(login['accountValue']);
+    login['accountId'] = parseInt(login['accountId']);
+    login['sprintId'] = parseInt(login['sprintId']);
     window.login = login;
     $('#user-name').html(login.firstname+' '+login.lastname);
 }
