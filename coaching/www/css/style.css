@@ -4,6 +4,10 @@
  *    Global variables
  */
 
+html {
+    background: #efefef;
+}
+
 body * {
     -webkit-transition: all 0.2s ease !important;
         -ms-transition: all 0.2s ease !important;
@@ -26,7 +30,6 @@ hr {
 .text-failure {
     color: #f35564; }
 .page {
-    min-height: 600px;
     padding-top: 260px;
     background: #efefef; }
 .card-title {
@@ -165,6 +168,11 @@ hr {
 /*
  *    Page 0.1 / start økt
  */
+
+#step1,
+#step3 {
+    overflow: hidden !important;
+}
 
 #step2,
 #step3 {

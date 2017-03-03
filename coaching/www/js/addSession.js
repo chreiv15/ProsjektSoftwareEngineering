@@ -4,6 +4,10 @@ var goalName;
 
 var hasGoal = false;
 
+function checkSession() {
+    alert("Dette vil overskrive din nåværende økt");
+}
+
 function setGoal(id) {
     switch (id) {
         case 1:
@@ -77,7 +81,7 @@ function setActive(button) {
 }
 
 function startSesstion() {
-    $.post("../../../ajax/addPassword.php", {
+    $.post("../../../ajax/addSprint.php", {
         function: 'function', 
         userId: 5201044,
         sprintGoal: 34,
