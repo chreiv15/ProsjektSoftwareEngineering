@@ -24,7 +24,7 @@
                 if(!empty($row[0])){
                     $goalId = $row[0];
                     echo "$goalId";
-                    $query = "INSERT INTO dnb_sprints (value, goal) VALUES($sprintGoal, $goalId);";
+                    $query = "INSERT INTO dnb_sprints (value, goal, user) VALUES($sprintGoal, $goalId, $userId);";
                     $response = @mysqli_query($dbc, $query);
                     break;
                 }
