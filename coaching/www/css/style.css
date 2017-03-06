@@ -188,6 +188,10 @@ hr {
  *    Page 1 / tidligere økt
  */
 
+.previous-page {
+    padding-top: 45px;
+}
+
 /*
  *    Page 2 / nåværende økt
  */
