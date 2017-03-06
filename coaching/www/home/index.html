@@ -58,13 +58,13 @@
                 </div>
                 
                 <div class="tabs">
-                    <a class="tab-item" onclick="setActive(this);plusPage(1);">
+                    <a class="tab-item" id="prior" onclick="setActive(this);plusPage(1);">
                         Tidligere økt
                     </a>
-                    <a class="tab-item active" onclick="setActive(this);plusPage(2);">
+                    <a class="tab-item active" id="active" onclick="setActive(this);plusPage(2);">
                         Nåværende økt
                     </a>
-                    <a class="tab-item" onclick="setActive(this);plusPage(3);">
+                    <a class="tab-item" id="goal" onclick="setActive(this);plusPage(3);">
                         Sparemål
                     </a>
                 </div>
@@ -73,18 +73,6 @@
             <div class="pages-container">
                 <div class="page page1" style="display:none;">
                     <div id="prior-list" class="list">
-                        <a class="item item-icon-left" href="../previous/?id=2347754">
-                            <i class="fa fa-check-circle-o text-success" aria-hidden="true"></i>
-                            ØKT 1
-                            <span class="item-note">20.05.16 - 20.06.16</span>
-                        </a>
-
-                        <a class="item item-icon-left" href="#">
-                            <i class="fa fa-times-circle-o text-failure" aria-hidden="true"></i>
-                            ØKT 2
-                            <span class="item-note">21.06.16 - 21.07.16</span>
-                        </a>
-
                         <!--a class="item item-icon-left" href="#">
                             <i class="fa fa-times-circle-o text-failure" aria-hidden="true"></i>
                             ØKT 3
