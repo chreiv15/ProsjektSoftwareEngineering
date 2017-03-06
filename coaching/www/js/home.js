@@ -36,3 +36,6 @@ $("#prior").click(function(){
         }
     });
 });
+
+// Value should be equal to days left in current sprint
+document.getElementById("days-left").value = "15";
