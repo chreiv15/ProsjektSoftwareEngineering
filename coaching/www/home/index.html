@@ -82,12 +82,12 @@
                 <div class="page page2" style="display:block;">
                     <div class="card current-card">
                         <div id="current-card" class="item-text-wrap">
-                            <h4 class="card-title">Startet 24.08.16</h4>
+                            <h4 class="card-title" id="sprintStart">Startet 24.08.16</h4>
                             
-                            <p class="current-text">Avsatt forbruk: 4000,-</p>
-                            <p class="current-text">Du har brukt <span class="text-success">2167/4000</span></p>
+                            <p class="current-text">Avsatt forbruk: <span class="sprintTarget"></span>,-</p>
+                            <p class="current-text">Du har brukt <span class="text-success"><span class="sprintSpending"></span>/<span class="sprintTarget"></span></span></p>
                             
-                            <p class="current-days"><span class="text-success">15 dager</span> gjenstår av nåværende økt</p>
+                            <p class="current-days"><span class="text-success" id="leftOfSprint">15 dager</span> gjenstår av nåværende økt</p>
                             <progress id="days-left" value="15" max="30"></progress>
                         </div>
                     </div>

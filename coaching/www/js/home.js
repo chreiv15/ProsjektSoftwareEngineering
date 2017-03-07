@@ -4,8 +4,24 @@ function getCurrentSprint() {
         userId: login.id
     },
     function(data) {
+        var months = ['januar','februar','mars','april','mai','juni','juli','august','september','oktober','november','desember'];
         data = JSON.parse(data);
         console.log(data);
+        var one_day=1000*60*60*24;
+        var sprintEnd = new Date(data['sprintEnd']);
+        var sprintStart = new Date(data['sprintStart']);
+        var today = new Date();
+        var sprintLength = sprintEnd - sprintStart;
+        var sprintLength = Math.round(sprintLength/one_day);
+        var currentDuration = today - sprintStart;
+        var currentDuration = Math.round(currentDuration/one_day);
+        var leftOfSprint = sprintLength - currentDuration;
+        $("#days-left").attr('value',currentDuration);
+        $("#days-left").attr('max',sprintLength);
+        $("#leftOfSprint").html(leftOfSprint+' dager');
+        $(".sprintTarget").html(data['sprintTarget']);
+        $(".sprintSpending").html(data['sprintSpending']);
+        $("#sprintStart").html('Startet '+sprintStart.getDate()+'. '+(months[sprintStart.getMonth()])+' '+sprintStart.getFullYear());
     });
 }
 getCurrentSprint();
