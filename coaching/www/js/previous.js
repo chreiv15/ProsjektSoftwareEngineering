@@ -35,13 +35,19 @@ function getFormerSprint() {
     $.post("../../../ajax/getFormerSprint.php",
     {
         userId: login.id,
-        sprintId: 10
+        sprintId: location.search.substr(4)
     },
     function(data) {
         data = JSON.parse(data);
         console.log(data);
         window.sprint = data;
-        $('#savedAmount').html('Du sparte '+(sprint['sprintTarget'])+' kr')
+        sprint.goalValue = parseFloat(sprint.goalValue);
+        sprint.sprintSpending = parseFloat(sprint.sprintSpending);
+        sprint.sprintTarget = parseFloat(sprint.sprintTarget);
+        
+        $('#savedAmount').html('Du sparte '+(login.beforeSpending-sprint.sprintSpending)+' kr');
+        $('#period').html(data.sprintStart+' - '+data.sprintEnd);
+        $('#setSpending').html('Du hadde avsatt forbruk på '+(login.beforeSpending-data.sprintTarget)+',-');
     });
 }
 getFormerSprint();
@@ -51,8 +57,8 @@ google.charts.setOnLoadCallback(drawChart);
 function drawChart() {
     var data = google.visualization.arrayToDataTable([
       ['Task', 'Forbruk'],
-      ['Forbruk', sprint['sprintSpending']],
-      ['Spart', sprint['sprintTarget']]
+      ['Forbruk', login.beforeSpending],
+      ['Spart', parseFloat(sprint.sprintSpending)]
     ]);
 
     var options = {
