@@ -61,6 +61,9 @@ $("#prior").click(function(){
 
 $("#goal").click(function(){
     console.log('Getting goal...');
+    $("#goalName").html(sprint.goalName);
+    $("#icon").addClass(sprint.goalIcon);
+    $("#currentSavings").html(sprint.saved);
 });
 
 // Value should be equal to days left in current sprint
