@@ -11,6 +11,11 @@ function getCurrentSprint() {
         var sprintEnd = new Date(data['sprintEnd']);
         var sprintStart = new Date(data['sprintStart']);
         var today = new Date();
+        if(sprintEnd.getDate() == today.getDate()){
+            window.location = '../summary/';
+        }else{
+            console.log(today.getDate() + ' IS NOT ' + sprintEnd.getDate())
+        }
         var sprintLength = sprintEnd - sprintStart;
         var sprintLength = Math.round(sprintLength/one_day);
         var currentDuration = today - sprintStart;
