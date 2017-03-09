@@ -1,8 +1,17 @@
 console.log('Hello world login'); 
 
 $("#submit").click(function(){
-    console.log('Submit'); 
-    
+    submit();
+});
+
+document.onkeypress = function (e) {
+    e = e || window.event;
+    if(e.key=="Enter") {
+        submit();
+    }
+};
+
+function submit(){
     $.post("../../../ajax/getUser.php",
     {
         user: $('#email').val(),
@@ -12,5 +21,4 @@ $("#submit").click(function(){
         console.log(data);
         window.location = './home/';
     });
-    
-});
+}
