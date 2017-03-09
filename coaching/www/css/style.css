@@ -316,6 +316,25 @@ progress[value]::-moz-progress-value {
  *    Page 4 / brukerprofil
  */
 
+.user-profile button {
+    margin: 0 !important;
+    border: none !important;
+    color: #efefef !important;
+}
+.user-profile .button-positive {
+    background: #007272 !important;
+}
+.user-profile .button-negative {
+    background: #f35564 !important;
+}
+.user-profile .button-delete {
+    margin: 15px 0 !important;
+}
+.user-profile .delete-text {
+    text-align: center;
+    margin-bottom: 15px auto;
+}
+
 .tabs-top .bar-header {
     position: relative !important;
 }
@@ -366,6 +385,39 @@ progress[value]::-moz-progress-value {
 
 .add-page {
     padding-top: 0; }
+
+/* 
+ *    Page 7 / statistikk
+ */
+
+.stat-form {
+    width: 80%;
+    text-align: left;
+    margin: 130px auto 20px;
+    z-index: 6000; 
+}
+#statistic .bar-header {
+    color: #fff;
+    position: fixed;
+    border-bottom-width: 0px;
+    background: #007272;
+}
+.stat-text {
+    margin: 15px 0 !important;
+}
+.stat-form .fa {
+    float: left !important;
+    margin-top: 5px !important;
+}
+/*
+#session-count,
+#success-count,
+#failure-count,
+#goal-count {
+    font-weight: bold;
+    font-size: 28px;
+}
+*/
 
 
 

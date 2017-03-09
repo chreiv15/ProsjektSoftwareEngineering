@@ -42,32 +42,32 @@
         <script src="../js/app.js"></script>
 
         <!-- custom screen js -->
-        <script src="../js/addUser.js"></script>
+        <script src="../js/addPin.js"></script>
     </head>
   
     <body ng-app="coacing" class="bg-primary">
 
-        <ion-pane id="register">
-            <div class="bar-header">
-                <a href="../index.html" class="btn-link"> <i class="fa fa-angle-left fa-back" aria-hidden="true"></i> </a> 
-                <h3 class="login-title">Opprett bruker</h3>
-            </div>
-            
-            <div class="list login-form">
-                <label class="item-input item-stacked-label">
-                    <input class="login-input" id="f-name" type="text" placeholder="Fornavn">
-                </label>
-                <label class="item-input item-stacked-label">
-                    <input class="login-input" id="l-name" type="text" placeholder="Etternavn">
-                </label>
-                <label class="item-input item-stacked-label">
-                    <input class="login-input" id="email" type="email" placeholder="E-post">
-                </label>
-                
-                <button class="button button-login button-block button-positive" onclick="addUser();">Gå videre</button>
-            </div>
-            
+        <ion-pane id="statistic">
             <div class="shape-container"></div>
+                <div class="bar bar-header">
+                    <a href="../home/index.html" class="btn-link"> <i class="fa fa-angle-left fa-back" aria-hidden="true"></i> </a> 
+                    <div class="h1 title">Statistikk</div>
+                </div>
+                
+                <div class="tabs profile-tabs">
+                </div>
+            </div>
+            
+            <div class="list stat-form">
+                <p class="stat-text">Du har fullført <span id="session-count">13</span> økter</p>
+                <i class="fa fa-check-circle-o text-success" aria-hidden="true"></i><p class="stat-text"><span id="success-count">11</span> er vellykket</p>
+                <i class="fa fa-times-circle-o text-failure" aria-hidden="true"></i><p class="stat-text"><span id="failure-count">2</span> er ikke vellykket</p>
+                <br>
+                <p class="stat-text">Du har spart totalt <span id="total-save-count">1050</span> kroner</p>
+                <p class="stat-text">Du har nådd <span id="goal-count">2</span> av dine sparemål</p>
+                
+                <a href=""><button class="button button-login button-block button-overview" onclick="">Se oversikt</button></a>
+            </div>
             
             <ion-content>
             </ion-content>
