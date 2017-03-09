@@ -4,6 +4,10 @@
  *    Global variables
  */
 
+.bar .title {
+    font-weight: 200 !important;
+}
+
 html {
     background: #efefef;
 }
@@ -96,10 +100,8 @@ hr {
     background: transparent; }
 .card-pic {
     width: 80px;
-    height: 80px;
-    border-radius: 100%;
-    border: 1px solid #fff; 
-    margin: 10px auto 25px !important;}
+    height: 80px; 
+    margin: 10px auto 15px !important;}
 .card-name {
     color: #fff; }
 .tabs {
@@ -338,16 +340,22 @@ progress[value]::-moz-progress-value {
 .tabs-top .bar-header {
     position: relative !important;
 }
-.fa-back, .fa-settings {
+.fa-back, 
+.fa-settings,
+.fa-new-session,
+.fa-settings-page {
     width: 50px;
     height: 50px;
-    color: #fff;
+    color: #efefef;
     position: absolute;
-    padding: 5px 20px;
+    padding: 8px 20px;
     z-index: 5000;
-    font-size: 26px !important; }
-.fa-settings {
-    margin-left: 250px; }
+    font-size: 22px !important; }
+.fa-new-session {
+    right: 0; }
+.fa-setting-page {
+    left: 0;
+}
 .profile-tabs {
     height: 210px !important;
     background: transparent !important;

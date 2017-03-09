@@ -1,5 +1,5 @@
 function getCurrentSprint() {
-    $.post("../../../ajax/getCurrentSprint.php",
+    $.post("http://tek.westerdals.no/~hagfre15/hagfre15.2015.tek.westerdals.no/web/gruppe19/ajax/getCurrentSprint.php",
     {
         userId: login.id
     },
@@ -13,7 +13,7 @@ function getCurrentSprint() {
         var sprintStart = new Date(data['sprintStart']);
         var today = new Date();
         if(sprintEnd.getDate() == today.getDate()){
-            window.location = '../summary/';
+            window.location = '../summary/index.html';
         }else{
             console.log(today.getDate()+'-'+today.getMonth() + ' IS NOT ' + sprintEnd.getDate()+'-'+sprintEnd.getMonth());
         }
@@ -34,7 +34,7 @@ getCurrentSprint();
 
 $("#prior").click(function(){
     console.log('Getting archive...');
-    $.post("../../../ajax/getSprintArchive.php",
+    $.post("http://tek.westerdals.no/~hagfre15/hagfre15.2015.tek.westerdals.no/web/gruppe19/ajax/getSprintArchive.php",
     {
         userId: login.id
     },

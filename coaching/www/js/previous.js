@@ -32,7 +32,7 @@ function readLogin(){
 readLogin();
 
 function getFormerSprint() {
-    $.post("../../../ajax/getFormerSprint.php",
+    $.post("http://tek.westerdals.no/~hagfre15/hagfre15.2015.tek.westerdals.no/web/gruppe19/ajax/getFormerSprint.php",
     {
         userId: login.id,
         sprintId: location.search.substr(4)

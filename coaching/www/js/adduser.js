@@ -1,6 +1,6 @@
 function addUser() {
     
-    $.post("../../../ajax/addUser.php", {
+    $.post("http://tek.westerdals.no/~hagfre15/hagfre15.2015.tek.westerdals.no/web/gruppe19/ajax/addUser.php", {
         function: 'function', 
         fname: $("#f-name").val(),
         lname: $("#l-name").val(),
@@ -8,7 +8,7 @@ function addUser() {
     }, function(data) {
         console.log(data);
         
-        window.location = "../newpin/?u=" + data;
+        window.location = "../newpin/index.html?u=" + data;
     });
     
 }
