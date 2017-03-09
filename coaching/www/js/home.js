@@ -6,8 +6,8 @@ function getCurrentSprint() {
     function(data) {
         var months = ['januar','februar','mars','april','mai','juni','juli','august','september','oktober','november','desember'];
         data = JSON.parse(data);
-        window.sprint = data;
         console.log(data);
+        window.sprint = data;
         var one_day=1000*60*60*24;
         var sprintEnd = new Date(data['sprintEnd']);
         var sprintStart = new Date(data['sprintStart']);
