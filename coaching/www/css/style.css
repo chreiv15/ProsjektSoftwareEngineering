@@ -122,7 +122,7 @@ hr {
     position: absolute;
     width: 100%;
     height: 100%;
-    background: transparent url("/img/shape1.svg") no-repeat bottom;    
+    background: transparent url("../img/shape1.svg") no-repeat bottom;    
     background-attachment: fixed;
 }
 
@@ -188,6 +188,16 @@ hr {
  *    Page 1 / tidligere økt
  */
 
+.item-statistic {
+    margin-bottom: 15px;
+}
+
+.item-statistic .fa-float-left {
+    float: right;
+    color: #007272 !important;
+    margin-top: 2px;
+}
+
 .previous-page {
     padding-top: 45px;
 }
@@ -241,6 +251,66 @@ progress[value]::-moz-progress-value {
 /*
  *    Page 3 / sparemål
  */
+
+/*
+ *    Page 3.5 / Ferdig økt
+ */
+
+
+#fin .bar-header {
+    width: 100%;
+    padding: 30px;
+    text-align: center;
+    position: absolute; }
+#fin .bar-header h3 {
+    margin-top: 0;
+    color: #efefef !important; }
+#fin .bar-header a {
+    float: left; }
+#fin .fa {
+    margin-left: -20px;
+    color: #fff !important; }
+.fin-form {
+    width: 80%;
+    text-align: center;
+    margin: 130px auto 20px;
+    z-index: 6000; 
+}
+#fin button {
+    color: #efefef !important;
+    border: 1px solid #efefef !important;
+}
+#fin .button-bottom {
+    margin-top: 120px !important;
+}
+#fin button:hover,
+#fin button:active,     
+#fin button:focus {
+    background: #efefef !important;
+    color: #007272 !important;
+    border: 1px solid #efefef !important;
+}
+
+.fin-form h3,
+.fin-form p {
+    color: #efefef;
+}
+
+#spending-text {
+    margin-top: 30px;
+}
+
+#badge-text {
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.fin-shape {
+    top: 0;
+    width: 640px;
+    height: 800px;
+    background: transparent url("../img/shape-fin.png") no-repeat bottom !important;   
+}
 
 /*
  *    Page 4 / brukerprofil
