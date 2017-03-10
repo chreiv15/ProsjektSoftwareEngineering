@@ -13,7 +13,7 @@ function getCurrentSprint() {
         var sprintStart = new Date(data['sprintStart']);
         var today = new Date();
         if(sprintEnd.getDate() == today.getDate()){
-            window.location = '../summary/';
+            window.location = '../summary/index.html';
         }else{
             console.log(today.getDate()+'-'+today.getMonth() + ' IS NOT ' + sprintEnd.getDate()+'-'+sprintEnd.getMonth());
         }

@@ -40,7 +40,7 @@ function wantGoal() {
     
     $("#session-goal").addClass("show");
 
-    $.post("../../../ajax/getCategories.php", {},
+    $.post("http://tek.westerdals.no/~hagfre15/hagfre15.2015.tek.westerdals.no/web/gruppe19/ajax/getCategories.php", {},
         function (data) {
             data = JSON.parse(data);
             window.categoryList = data;
@@ -86,7 +86,7 @@ function setActive(button) {
 }
 
 function startSesstion() {
-    $.post("../../../ajax/addSprint.php", {
+    $.post("http://tek.westerdals.no/~hagfre15/hagfre15.2015.tek.westerdals.no/web/gruppe19/ajax/addSprint.php", {
         userId: login.id,
         sprintGoal: $("#session-savings").val(),
         beforeSpending: login.beforeSpending,

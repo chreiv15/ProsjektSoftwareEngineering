@@ -46,15 +46,16 @@
             
             <div class="tabs-striped tabs-top tabs-background-positive tabs-color-light">
                 <div id="main-header" class="bar bar-header">
+                    <a href="../settings/index.html" class="btn-link"> <i class="fa fa-cog fa-settings-page" aria-hidden="true"></i> </a> 
                     <div class="h1 title">Hjem</div>
-                    <a href="../addsession/index.html" class="btn-link"> <i class="fa fa-plus-circle fa-settings" aria-hidden="true"></i> </a> 
+                    <a href="../addsession/index.html" class="btn-link"> <i class="fa fa-plus fa-new-session" aria-hidden="true"></i> </a> 
                     
-                    <div class="card user-card">
+                    <a href="../profile/index.html"><div class="card user-card">
                         <div class="item-text-wrap">
-                            <div class="card-pic"></div>
+                            <img class="card-pic" src="../img/avatar-default-home.png">
                             <a href="../profile/index.html"><h4 class="card-name" id="user-name"></h4></a>
                         </div>
-                    </div>
+                    </div></a>
                 </div>
                 
                 <div class="tabs">
@@ -100,6 +101,11 @@
                 </div>
 
                 <div class="page page3" style="display:none;">
+                    <div id="prior-list" class="list">
+                        <a class="item item-icon-left item-goals" href="../statistic/index.html">
+                            <i class="fa fa-usd text-success" aria-hidden="true"></i>Se alle sparemål<i class="fa-float-left fa fa-angle-right text-success" aria-hidden="true"></i>
+                        </a>
+                    </div>
                     <div class="card goal-card">
                         <div id="goal-card" class="item-text-wrap">
                             <h4 class="card-title">Ditt sparemål er: <span class="text-success" id="goalName">Reise</span></h4>

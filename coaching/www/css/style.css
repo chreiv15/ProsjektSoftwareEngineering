@@ -4,6 +4,20 @@
  *    Global variables
  */
 
+.bar .title {
+    padding: 2px 0;
+    font-weight: 200 !important;
+}
+
+.bar-header {
+    height: 50px;
+    padding: 3px 0;
+}
+
+.bar-header .fa {
+    font-size: 27px !important;
+}
+
 html {
     background: #efefef;
 }
@@ -52,11 +66,11 @@ hr {
 }
 
 /* Icons */
-.goal-icon {
-    height: 20px;
-}
-.list-icon {
-    float: right;
+.goal-icon {    
+    height: 30px;
+    margin-top: -6px;
+    position: absolute;
+    right: 15px;
 }
 /* /Icons */
 
@@ -69,6 +83,15 @@ hr {
 .button-login:focus, .button-login:active {
     background: #007272 !important;
     color: #fff !important; }
+.profile-buttons {
+    color: #efefef !important;
+}
+.profile-buttons a {
+    margin: 15px 0;
+}
+.profile-buttons .button-logout {
+    margin-bottom: 30px !important;
+}
 /* /Button */
 
 /* List styles */
@@ -76,7 +99,11 @@ hr {
     background: transparent;
     padding: 10px 25px;
     margin: 15px 0 15px;
-    border-color: transparent; }
+    border-color: transparent; 
+}
+.item {
+    padding: 20px 15px;
+}
 
 /* /List */
 
@@ -96,10 +123,8 @@ hr {
     background: transparent; }
 .card-pic {
     width: 80px;
-    height: 80px;
-    border-radius: 100%;
-    border: 1px solid #fff; 
-    margin: 10px auto 25px !important;}
+    height: 80px; 
+    margin: 10px auto 15px !important;}
 .card-name {
     color: #fff; }
 .tabs {
@@ -118,12 +143,11 @@ hr {
 }
 
 .shape-container {
-    top: 60%;
+    top: 0;
     position: absolute;
     width: 100%;
-    height: 100%;
-    background: transparent url("../img/shape1.svg") no-repeat bottom;    
-    background-attachment: fixed;
+    height: 800px;
+    background: transparent url("../img/shape1.svg") no-repeat;    
 }
 
 #login .bar-header,
@@ -143,6 +167,7 @@ hr {
     color: #007272 !important; }
 .login-form {
     width: 80%;
+    height: 400px;
     margin: 170px auto 20px;
     z-index: 6000; }
 .input-label {
@@ -163,7 +188,9 @@ hr {
     margin: 15px auto !important;
     border-radius: 0px !important; }
 .button-register {
-    margin-top: 50% !important;}
+position: absolute;
+right:    0;
+bottom:   0;}
 
 /*
  *    Page 0.1 / start økt
@@ -193,6 +220,16 @@ hr {
 }
 
 .item-statistic .fa-float-left {
+    float: right;
+    color: #007272 !important;
+    margin-top: 2px;
+}
+
+.item-goals {
+    margin-bottom: -5px;
+}
+
+.item-goals .fa-float-left {
     float: right;
     color: #007272 !important;
     margin-top: 2px;
@@ -338,16 +375,22 @@ progress[value]::-moz-progress-value {
 .tabs-top .bar-header {
     position: relative !important;
 }
-.fa-back, .fa-settings {
+.fa-back, 
+.fa-settings,
+.fa-new-session,
+.fa-settings-page {
     width: 50px;
     height: 50px;
-    color: #fff;
+    color: #efefef;
     position: absolute;
-    padding: 5px 20px;
+    padding: 8px 20px;
     z-index: 5000;
-    font-size: 26px !important; }
-.fa-settings {
-    margin-left: 250px; }
+    font-size: 22px !important; }
+.fa-new-session {
+    right: 0; }
+.fa-setting-page {
+    left: 0;
+}
 .profile-tabs {
     height: 210px !important;
     background: transparent !important;

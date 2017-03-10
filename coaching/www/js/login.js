@@ -12,13 +12,14 @@ document.onkeypress = function (e) {
 };
 
 function submit(){
-    $.post("../../../ajax/getUser.php",
+    $.post("http://tek.westerdals.no/~hagfre15/hagfre15.2015.tek.westerdals.no/web/gruppe19/ajax/getUser.php",
     {
         user: $('#email').val(),
         pin: $('#pin').val()
     },
     function(data, status){
         console.log(data);
-        window.location = './home/';
+        alert(data, status);
+        window.location = '../home/index.html';
     });
 }
