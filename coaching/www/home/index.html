@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 
 <html>
-   
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-        <title>ØKT</title>
 
-        <link rel="manifest" href="../manifest.json">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>ØKT</title>
 
-        <!-- un-comment this code to enable service worker
+    <link rel="manifest" href="../manifest.json">
+
+    <!-- un-comment this code to enable service worker
         <script>
           if ('serviceWorker' in navigator) {
             navigator.serviceWorker.register('service-worker.js')
@@ -18,88 +18,89 @@
           }
         </script>-->
 
-        <link href="../lib/ionic/css/ionic.css" rel="stylesheet">
-        <link href="../css/style.css" rel="stylesheet">
-        <link href="../css/font-awesome.css" rel="stylesheet">
+    <link href="../lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/font-awesome.css" rel="stylesheet">
 
-        <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
         <link href="css/ionic.app.css" rel="stylesheet">
         -->
 
-        <!-- jquery framework -->
-        <script src="../js/jquery.js"></script>
+    <!-- jquery framework -->
+    <script src="../js/jquery.js"></script>
 
-        <!-- ionic/angularjs js -->
-        <script src="../lib/ionic/js/ionic.bundle.js"></script>
-        
-        <!-- ionic js -->
-        <script src="http://ionicframework.com/js/site.js?1:280"></script>
+    <!-- ionic/angularjs js -->
+    <script src="../lib/ionic/js/ionic.bundle.js"></script>
 
-        <!-- cordova script (this will be a 404 during development) -->
-        <script src="../cordova.js"></script>
+    <!-- ionic js -->
+    <script src="http://ionicframework.com/js/site.js?1:280"></script>
 
-    </head>
-  
-    <body ng-app="coacing">
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="../cordova.js"></script>
 
-        <ion-pane>
-            
-            <div class="tabs-striped tabs-top tabs-background-positive tabs-color-light">
-                <div id="main-header" class="bar bar-header">
-                    <a href="../settings/index.html" class="btn-link"> <i class="fa fa-cog fa-settings-page" aria-hidden="true"></i> </a> 
-                    <div class="h1 title">Hjem</div>
-                    <a href="../addsession/index.html" class="btn-link"> <i class="fa fa-plus fa-new-session" aria-hidden="true"></i> </a> 
-                    
-                    <a href="../profile/index.html"><div class="card user-card">
+</head>
+
+<body ng-app="coacing">
+
+    <ion-pane>
+
+        <div class="tabs-striped tabs-top tabs-background-positive tabs-color-light">
+            <div id="main-header" class="bar bar-header">
+                <a href="../settings/index.html" class="btn-link"> <i class="fa fa-cog fa-settings-page" aria-hidden="true"></i> </a>
+                <div class="h1 title">Hjem</div>
+                <a href="../addsession/index.html" class="btn-link"> <i class="fa fa-plus fa-new-session" aria-hidden="true"></i> </a>
+
+                <a href="../profile/index.html">
+                    <div class="card user-card">
                         <div class="item-text-wrap">
                             <img class="card-pic" src="../img/avatar-default-home.png">
                             <a href="../profile/index.html"><h4 class="card-name" id="user-name"></h4></a>
                         </div>
-                    </div></a>
-                </div>
-                
-                <div class="tabs">
-                    <a class="tab-item" id="prior" onclick="setActive(this);plusPage(1);">
+                    </div>
+                </a>
+            </div>
+
+            <div class="tabs">
+                <a class="tab-item" id="prior" onclick="setActive(this);plusPage(1);">
                         Tidligere økt
                     </a>
-                    <a class="tab-item active" id="active" onclick="setActive(this);plusPage(2);">
+                <a class="tab-item active" id="active" onclick="setActive(this);plusPage(2);">
                         Nåværende økt
                     </a>
-                    <a class="tab-item" id="goal" onclick="setActive(this);plusPage(3);">
+                <a class="tab-item" id="goal" onclick="setActive(this);plusPage(3);">
                         Sparemål
                     </a>
-                </div>
             </div>
-            
-            <div class="pages-container">
-                <div class="page page1" style="display:none;">
-                    <div id="prior-list" class="list">
-                        <a class="item item-icon-left item-statistic" href="../statistic/index.html">
-                            <i class="fa fa-bar-chart text-success" aria-hidden="true"></i>Se statistikk<i class="fa-float-left fa fa-angle-right text-success" aria-hidden="true"></i>
-                        </a>
-                        
-                        <!-- Previous sprints will load here -->
-                    </div>
-                    
-                    <div class="page-padding"></div>
+        </div>
+
+        <div class="pages-container">
+            <div class="page page1" style="display:none;">
+                <a class="item item-icon-left item-statistic" href="../statistic/index.html" id="statLink">
+    <i class="fa fa-bar-chart text-success" aria-hidden="true"></i>Se statistikk<i class="fa-float-left fa fa-angle-right text-success" aria-hidden="true"></i>
+</a>
+                <div id="prior-list" class="list">
+
+                    <!-- Previous sprints will load here -->
                 </div>
 
-                <div class="page page2" style="display:block;">
-                    <div class="card current-card">
-                        <div id="current-card" class="item-text-wrap">
-                            <h4 class="card-title" id="sprintStart">Startet 24.08.16</h4>
-                            
-                            <p class="current-text">Avsatt forbruk: <span class="sprintTarget"></span>,-</p>
-                            <p class="current-text">Du har brukt <span class="text-success"><span class="sprintSpending"></span>/<span class="sprintTarget"></span></span></p>
-                            
-                            <p class="current-days"><span class="text-success" id="leftOfSprint">15 dager</span> gjenstår av nåværende økt</p>
-                            <progress id="days-left" value="15" max="30"></progress>
-                        </div>
+                <div class="page-padding"></div>
+            </div>
+
+            <div class="page page2" style="display:block;">
+                <div class="card current-card">
+                    <div id="current-card" class="item-text-wrap">
+                        <h4 class="card-title" id="sprintStart">Startet 24.08.16</h4>
+
+                        <p class="current-text">Avsatt forbruk: <span class="sprintTarget"></span>,-</p>
+                        <p class="current-text">Du har brukt <span class="text-success"><span class="sprintSpending"></span>/<span class="sprintTarget"></span></span>
+                        </p>
+
+                        <p class="current-days"><span class="text-success" id="leftOfSprint">15 dager</span> gjenstår av nåværende økt</p>
+                        <progress id="days-left" value="15" max="30"></progress>
                     </div>
-                    
-                    <div class="page-padding"></div>
                 </div>
 
+<<<<<<< HEAD
                 <div class="page page3" style="display:none;">
                     <div id="prior-list" class="list">
                         <a class="item item-icon-left item-goals" href="../goals/index.html">
@@ -112,34 +113,49 @@
                             <i class="fa category-icon" aria-hidden="true" id="icon"></i>
                             <p class="current-days">Du har hittil spart <span class="text-success" id="currentSavings"></span> kroner</p>
                         </div>
-                    </div>
-                    
-                    <div class="page-padding"></div>
-                </div>
+=======
+                <div class="page-padding"></div>
             </div>
 
-            <ion-content>
-            </ion-content>
-        </ion-pane>
-        
-        <!-- custom js -->
-        <script src="../js/app.js"></script>
+            <div class="page page3" style="display:none;">
+                <div id="prior-list" class="list">
+                    <a class="item item-icon-left item-goals" href="../statistic/index.html">
+                        <i class="fa fa-usd text-success" aria-hidden="true"></i>Se alle sparemål<i class="fa-float-left fa fa-angle-right text-success" aria-hidden="true"></i>
+                    </a>
+                </div>
+                <div class="card goal-card">
+                    <div id="goal-card" class="item-text-wrap">
+                        <h4 class="card-title">Ditt sparemål er: <span class="text-success" id="goalName">Reise</span></h4>
+                        <i class="fa category-icon" aria-hidden="true" id="icon"></i>
+                        <p class="current-days">Du har hittil spart <span class="text-success" id="currentSavings"></span> kroner</p>
+>>>>>>> origin/master
+                    </div>
+                </div>
 
-    </body>
-    
-    <script src="../js/home.js"></script>
-    <script type="text/javascript">
-        
-        function setActive(button) {
-            var btn = $(button);
-            
-            $(".active").removeClass("active");
-            
-            if (!btn.hasClass("active")) {
-                btn.addClass("active");
-            } 
+                <div class="page-padding"></div>
+            </div>
+        </div>
+
+        <ion-content>
+        </ion-content>
+    </ion-pane>
+
+    <!-- custom js -->
+    <script src="../js/app.js"></script>
+
+</body>
+
+<script src="../js/home.js"></script>
+<script type="text/javascript">
+    function setActive(button) {
+        var btn = $(button);
+
+        $(".active").removeClass("active");
+
+        if (!btn.hasClass("active")) {
+            btn.addClass("active");
         }
-        
-    </script>
-    
+    }
+</script>
+
 </html>

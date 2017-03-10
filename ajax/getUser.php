@@ -37,8 +37,8 @@ if(mysqli_num_rows($response)>0){
     $json['sprintStart'] = substr($sprintStart,0,10);
     $json['sprintId'] = $sprintId;
     $json = json_encode($json);
-    setcookie("login", $json, time()+3600, "/");
-    echo "OK";
+    //setcookie("login", $json, time()+3600, "/");
+    echo $json;
 } else {
     echo "Epic fail!$sql";
 }
