@@ -10,25 +10,25 @@ function checkSession() {
 
 function setGoal(id) {
     switch (id) {
-        case 1:
-            session = "clothes";
-            break;
+    case 1:
+        session = "clothes";
+        break;
 
-        case 2:
-            session = "food";
-            break;
+    case 2:
+        session = "food";
+        break;
 
-        case 3:
-            session = "lifestyle";
-            break;
+    case 3:
+        session = "lifestyle";
+        break;
 
-        case 4:
-            session = "electronics";
-            break;
+    case 4:
+        session = "electronics";
+        break;
 
-        default:
-            session = "undefined";
-            break;
+    default:
+        session = "undefined";
+        break;
     }
 
     $("#step1").addClass("hide");
@@ -37,7 +37,7 @@ function setGoal(id) {
 
 function wantGoal() {
     hasGoal = true;
-    
+
     $("#session-goal").addClass("show");
 
     $.post("http://fredrikhagen.no/westerdals/gruppe19/ajax/getCategories.php", {},
@@ -51,7 +51,7 @@ function wantGoal() {
                 item.className = "item item-icon-left text-left";
                 item.innerHTML = data[i].name;
                 $("#session-goal").append(item);
-                $(item).click(function(){
+                $(item).click(function () {
                     window.goalCategory = this.id;
                     window.goalCategoryName = this.innerHTML;
                     addGoal(goalCategory);
@@ -62,14 +62,14 @@ function wantGoal() {
 }
 
 function addGoal(category) {
-    category = parseInt(category)-10;
+    category = parseInt(category) - 10;
     $("#step2").removeClass("show");
     $("#step2").addClass("hide");
     $("#step3").addClass("show");
-    
+
     if (hasGoal) {
-        $("#has-goal").append("<div class='item item-icon-left'>Du har valgt "+categoryList[category]['name'].toLowerCase()+"</div>");
-        $("#has-goal").append("<div class='item item-icon-left'>Skriv inn navnet på ditt sparemål<input type='text' class='profile-input' id='session-goalname' placeholder='f.eks "+categoryList[category]['example']+"' /></div>");
+        $("#has-goal").append("<div class='item item-icon-left'>Du har valgt " + categoryList[category]['name'].toLowerCase() + "</div>");
+        $("#has-goal").append("<div class='item item-icon-left'>Skriv inn navnet på ditt sparemål<input type='text' class='profile-input' id='session-goalname' placeholder='f.eks " + categoryList[category]['example'] + "' /></div>");
         $("#has-goal").append("<div class='item item-icon-left'>Hva koster sparemålet?<input type='text' class='profile-input' id='session-goalvalue' placeholder='f.eks 8000' / onkeyup='getTargetDate()'></div>");
         $("#has-goal").append("<div class='item item-icon-left'>Du vil nå målet innen<input type='text' class='profile-input' id='session-goaltargetdate' readonly /></div>");
     }
@@ -94,27 +94,27 @@ function startSesstion() {
         goalValue: $("#session-goalvalue").val(),
         goalCategory: goalCategory,
         goalTargetDate: goalTargetDate
-    },function(data) {
+    }, function (data) {
         window.sprintId = data.trim();
         console.log(sprintId);
         //window.location = '../addsession/';
     });
 }
 
-function getTargetDate(){
+function getTargetDate() {
     var goalValue = $('#session-goalvalue').val();
     goalValue = parseFloat(goalValue);
     var sessionGoal = $('#session-savings').val();
     sessionGoal = parseFloat(sessionGoal);
     var due = goalValue / sessionGoal;
-    var days = parseInt(due*30);
+    var days = parseInt(due * 30);
     var target = new Date();
     target.addDays(days);
-    window.goalTargetDate = target.getFullYear()+'-'+target.getMonth()+'-'+target.getDate();
-    $('#session-goaltargetdate').val(target.getDate()+'/'+target.getMonth()+'/'+target.getFullYear());
+    window.goalTargetDate = target.getFullYear() + '-' + target.getMonth() + '-' + target.getDate();
+    $('#session-goaltargetdate').val(target.getDate() + '/' + target.getMonth() + '/' + target.getFullYear());
 }
 
-Date.prototype.addDays = function(days) {
+Date.prototype.addDays = function (days) {
     this.setDate(this.getDate() + parseInt(days));
     return this;
 };
@@ -122,7 +122,7 @@ Date.prototype.addDays = function(days) {
 function getCookie(cname) {
     var name = cname + "=";
     var ca = document.cookie.split(';');
-    for(var i = 0; i <ca.length; i++) {
+    for (var i = 0; i < ca.length; i++) {
         var c = ca[i];
         while (c.charAt(0) == ' ') {
             c = c.substring(1);
@@ -137,9 +137,16 @@ function getCookie(cname) {
     return "";
 }
 
-function readLogin(){
-    
-    login = getCookie("login");
+function getLocalStorage(name) {
+    var data = localStorage.getItem(name);
+    data = JSON.parse(data);
+    console.log(data);
+    return data;
+}
+
+function readLogin() {
+
+    login = getLocalStorage("login");
     login['id'] = parseInt(login['id']);
     login['goalId'] = parseInt(login['goalId']);
     login['goalValue'] = parseFloat(login['goalValue']);
@@ -148,6 +155,6 @@ function readLogin(){
     login['accountId'] = parseInt(login['accountId']);
     login['sprintId'] = parseInt(login['sprintId']);
     window.login = login;
-    $('#user-name').html(login.firstname+' '+login.lastname);
+    $('#user-name').html(login.firstname + ' ' + login.lastname);
 }
 readLogin();
