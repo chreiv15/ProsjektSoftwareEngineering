@@ -471,11 +471,18 @@ progress[value]::-moz-progress-value {
  *    Page 7 / statistikk
  */
 
-.stat-form {
+.stat-form,
+.goal-form {
     width: 80%;
     text-align: left;
     margin: 130px auto 20px;
     z-index: 6000; 
+}
+.goal-form {
+    width: 100%;
+}
+.goal-form .item {
+    padding: 25px !important;
 }
 #statistic .bar-header {
     color: #fff;
@@ -483,8 +490,12 @@ progress[value]::-moz-progress-value {
     border-bottom-width: 0px;
     background: #007272;
 }
-.stat-text {
+.stat-text,
+.goal-text {
     margin: 15px 0 !important;
+}
+.goal-text {
+    text-align: center;
 }
 .stat-form .fa {
     float: left !important;
