@@ -5,7 +5,17 @@
  */
 
 .bar .title {
+    padding: 2px 0;
     font-weight: 200 !important;
+}
+
+.bar-header {
+    height: 50px;
+    padding: 3px 0;
+}
+
+.bar-header .fa {
+    font-size: 27px !important;
 }
 
 html {
@@ -56,11 +66,11 @@ hr {
 }
 
 /* Icons */
-.goal-icon {
-    height: 20px;
-}
-.list-icon {
-    float: right;
+.goal-icon {    
+    height: 30px;
+    margin-top: -6px;
+    position: absolute;
+    right: 15px;
 }
 /* /Icons */
 
@@ -73,6 +83,15 @@ hr {
 .button-login:focus, .button-login:active {
     background: #007272 !important;
     color: #fff !important; }
+.profile-buttons {
+    color: #efefef !important;
+}
+.profile-buttons a {
+    margin: 15px 0;
+}
+.profile-buttons .button-logout {
+    margin-bottom: 30px !important;
+}
 /* /Button */
 
 /* List styles */
@@ -80,7 +99,11 @@ hr {
     background: transparent;
     padding: 10px 25px;
     margin: 15px 0 15px;
-    border-color: transparent; }
+    border-color: transparent; 
+}
+.item {
+    padding: 20px 15px;
+}
 
 /* /List */
 
@@ -197,6 +220,16 @@ bottom:   0;}
 }
 
 .item-statistic .fa-float-left {
+    float: right;
+    color: #007272 !important;
+    margin-top: 2px;
+}
+
+.item-goals {
+    margin-bottom: -5px;
+}
+
+.item-goals .fa-float-left {
     float: right;
     color: #007272 !important;
     margin-top: 2px;
