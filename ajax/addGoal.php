@@ -1,4 +1,4 @@
-<?php
+<?php header('Access-Control-Allow-Origin: *');
 
 // BRUKES IKKE LENGER
 

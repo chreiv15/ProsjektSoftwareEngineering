@@ -1,4 +1,4 @@
-<?php
+<?php header('Access-Control-Allow-Origin: *');
 
 function val($data) {
   $data = trim($data);

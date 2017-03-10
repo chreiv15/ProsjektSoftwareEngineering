@@ -1,4 +1,4 @@
-<?php
+<?php header('Access-Control-Allow-Origin: *');
 
     require_once 'dbc.php';
     require_once 'val.php';

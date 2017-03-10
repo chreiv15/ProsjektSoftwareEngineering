@@ -1,4 +1,4 @@
-<?php
+<?php header('Access-Control-Allow-Origin: *');
 
 if($_COOKIE['login']) {
     $userData = explode("|", $_COOKIE['login']);

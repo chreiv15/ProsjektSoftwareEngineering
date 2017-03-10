@@ -1,5 +1,5 @@
 function getCurrentSprint() {
-    $.post("../../../ajax/getCurrentSprint.php",
+    $.post("http://tek.westerdals.no/~hagfre15/hagfre15.2015.tek.westerdals.no/web/gruppe19/ajax/getCurrentSprint.php",
     {
         userId: login.id
     },
@@ -34,7 +34,7 @@ getCurrentSprint();
 
 $("#prior").click(function(){
     console.log('Getting archive...');
-    $.post("../../../ajax/getSprintArchive.php",
+    $.post("http://tek.westerdals.no/~hagfre15/hagfre15.2015.tek.westerdals.no/web/gruppe19/ajax/getSprintArchive.php",
     {
         userId: login.id
     },
