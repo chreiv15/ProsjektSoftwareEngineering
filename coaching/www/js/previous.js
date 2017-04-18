@@ -35,7 +35,7 @@ function getFormerSprint() {
 
             $('#savedAmount').html('Du sparte ' + (login.beforeSpending - sprint.sprintSpending) + ' kr');
             $('#period').html(data.sprintStart + ' - ' + data.sprintEnd);
-            $('#setSpending').html('Du hadde avsatt forbruk på ' + (login.beforeSpending - data.sprintTarget) + ',-');
+            $('#setSpending').html('Du hadde avsatt forbruk på ' + (login.beforeSpending - data.sprintTarget).toFixed(2).toString().replace(".", ",")+' kr');
         });
 }
 getFormerSprint();

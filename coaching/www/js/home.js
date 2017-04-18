@@ -25,8 +25,8 @@ function getCurrentSprint() {
         $("#days-left").attr('value',currentDuration);
         $("#days-left").attr('max',sprintLength);
         $("#leftOfSprint").html(leftOfSprint+' dager');
-        $(".sprintTarget").html(login.beforeSpending - data['sprintTarget']);
-        $(".sprintSpending").html(data['sprintSpending']);
+        $(".sprintTarget").html(parseFloat(login.beforeSpending - data['sprintTarget']).toFixed(2).toString().replace(".", ",")+' kr');
+        $(".sprintSpending").html(parseFloat(data['sprintSpending']).toFixed(2).toString().replace(".", ",")+' kr');
         $("#sprintStart").html('Startet '+sprintStart.getDate()+'. '+(months[sprintStart.getMonth()])+' '+sprintStart.getFullYear());
     });
 }
@@ -63,7 +63,7 @@ $("#goal").click(function(){
     console.log('Getting goal...');
     $("#goalName").html(sprint.goalName);
     $("#icon").addClass(sprint.goalIcon);
-    $("#currentSavings").html(sprint.saved);
+    $("#currentSavings").html(sprint.saved.replace(".", ","));
 });
 
 // Value should be equal to days left in current sprint
