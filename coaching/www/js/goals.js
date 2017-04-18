@@ -26,8 +26,9 @@ function getFormerGoals() {
         },
         function (data) {
             data = JSON.parse(data);
+            $("#goal-count").html(data.length-1);
             console.log(data);
-            for(var i=0;i<data.length;i++){
+            for(var i=1;i<data.length;i++){
                 var item = document.createElement('div');
                 $(item).addClass('item');
                 $(item).addClass('item-icon-left');
