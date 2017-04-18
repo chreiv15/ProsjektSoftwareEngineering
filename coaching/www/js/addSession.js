@@ -50,6 +50,7 @@ function wantGoal() {
                 item.id = data[i].id;
                 item.className = "item item-icon-left text-left";
                 item.innerHTML = data[i].name;
+                item.innerHTML += '<i class="fa '+data[i].icon+'" aria-hidden="true"></i>';
                 $("#session-goal").append(item);
                 $(item).click(function () {
                     window.goalCategory = this.id;
