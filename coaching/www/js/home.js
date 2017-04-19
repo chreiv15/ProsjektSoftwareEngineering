@@ -50,7 +50,7 @@ $("#prior").click(function(){
             icon.className = 'fa fa-check-circle-o text-success';
             $(icon).attr('aria-hidden','true');
             $(item).append(icon);
-            $(item).append('ØKT '+i);
+            $(item).append('ØKT '+(i+1));
             var date = document.createElement('span');
             date.className = 'item-note';
             date.innerHTML = data[i].sprintStart+' - '+data[i].sprintEnd;
