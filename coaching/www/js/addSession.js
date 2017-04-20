@@ -9,7 +9,6 @@ function checkSession() { // MÅ FULLFØRES
     alert("Dette vil overskrive din nåværende økt");
 }
 
-<<<<<<< HEAD
 function goBack() {
     switch (step) {
         case 1:
@@ -34,10 +33,7 @@ function goBack() {
 
 function setGoal(id) {
     step = 2;
-    
-=======
-function setGoal(id) { // INGEN FUNKSJONALITET
->>>>>>> origin/master
+
     switch (id) {
     case 1:
         session = "clothes";
