@@ -9,22 +9,24 @@ function checkSession() { // MÅ FULLFØRES
     alert("Dette vil overskrive din nåværende økt");
 }
 
-<<<<<<< HEAD
 function goBack() {
     switch (step) {
         case 1:
+            window.location = "../home/index.html";
             break;
         
         case 2:
+            step = 1;
             $("#step2").removeClass("show");
             $("#step2").addClass("hide");
             $("#step1").addClass("show");
             break;
         
         case 3:
-            $("#step2").removeClass("show");
-            $("#step2").addClass("hide");
-            $("#step3").addClass("show");
+            step = 2;
+            $("#step3").removeClass("show");
+            $("#step3").addClass("hide");
+            $("#step2").addClass("show");
             break;
         
         default:
@@ -35,9 +37,6 @@ function goBack() {
 function setGoal(id) {
     step = 2;
     
-=======
-function setGoal(id) { // INGEN FUNKSJONALITET
->>>>>>> origin/master
     switch (id) {
     case 1:
         session = "clothes";
@@ -60,6 +59,7 @@ function setGoal(id) { // INGEN FUNKSJONALITET
         break;
     }
 
+    $("#step1").removeClass("show");
     $("#step1").addClass("hide");
     $("#step2").addClass("show");
 }
@@ -93,6 +93,8 @@ function wantGoal() {
 }
 
 function addGoal(category) {
+    step = 3;
+    
     category = parseInt(category) - 10;
     $("#step2").removeClass("show");
     $("#step2").addClass("hide");
