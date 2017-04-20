@@ -9,22 +9,9 @@
 
         <link rel="manifest" href="manifest.json">
 
-        <!-- un-comment this code to enable service worker
-        <script>
-          if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('service-worker.js')
-              .then(() => console.log('service worker installed'))
-              .catch(err => console.log('Error', err));
-          }
-        </script>-->
-
         <link href="../lib/ionic/css/ionic.css" rel="stylesheet">
         <link href="../css/style.css" rel="stylesheet">
         <link href="../css/font-awesome.css" rel="stylesheet">
-
-        <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
-        <link href="css/ionic.app.css" rel="stylesheet">
-        -->
 
         <!-- jquery framework -->
         <script src="../js/jquery.js"></script>
@@ -40,13 +27,9 @@
 
         <!-- custom js -->
         <script src="../js/app.js"></script>
-
-        <!-- custom screen js -->
-        <script src="../js/addPin.js"></script>
     </head>
   
-    <body ng-app="coacing" class="bg-primary">
-
+    <body class="bg-primary">
         <ion-pane id="fin">
             <div class="shape-container fin-shape"></div>
             <div class="bar-header"> 
@@ -68,7 +51,6 @@
         </ion-pane>
         
         <script src="../js/finsession.js"></script>
-
     </body>
     
 </html>

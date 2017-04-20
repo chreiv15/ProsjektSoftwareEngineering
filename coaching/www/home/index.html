@@ -9,23 +9,10 @@
 
         <link rel="manifest" href="../manifest.json">
 
-        <!-- un-comment this code to enable service worker
-            <script>
-              if ('serviceWorker' in navigator) {
-                navigator.serviceWorker.register('service-worker.js')
-                  .then(() => console.log('service worker installed'))
-                  .catch(err => console.log('Error', err));
-              }
-            </script>-->
-
         <link href="../lib/ionic/css/ionic.css" rel="stylesheet">
         <link href="../css/style.css" rel="stylesheet">
         <link href="../css/font-awesome.css" rel="stylesheet">
-
-        <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
-            <link href="css/ionic.app.css" rel="stylesheet">
-            -->
-
+        
         <!-- jquery framework -->
         <script src="../js/jquery.js"></script>
 
@@ -37,7 +24,6 @@
 
         <!-- cordova script (this will be a 404 during development) -->
         <script src="../cordova.js"></script>
-
     </head>
 
     <body>
@@ -60,14 +46,14 @@
 
                 <div class="tabs">
                     <a class="tab-item" id="prior" onclick="setActive(this);plusPage(1);">
-                            Tidligere økt
-                        </a>
+                        Tidligere økt
+                    </a>
                     <a class="tab-item active" id="active" onclick="setActive(this);plusPage(2);">
-                            Nåværende økt
-                        </a>
+                        Nåværende økt
+                    </a>
                     <a class="tab-item" id="goal" onclick="setActive(this);plusPage(3);">
-                            Sparemål
-                        </a>
+                        Sparemål
+                    </a>
                 </div>
             </div>
 
