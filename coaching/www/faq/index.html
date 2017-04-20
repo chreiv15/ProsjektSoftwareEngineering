@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+
+<html>
+   
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+        <title>ØKT</title>
+
+        <link rel="manifest" href="manifest.json">
+
+        <!-- un-comment this code to enable service worker
+        <script>
+          if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('service-worker.js')
+              .then(() => console.log('service worker installed'))
+              .catch(err => console.log('Error', err));
+          }
+        </script>-->
+
+        <link href="../lib/ionic/css/ionic.css" rel="stylesheet">
+        <link href="../css/style.css" rel="stylesheet">
+        <link href="../css/font-awesome.css" rel="stylesheet">
+
+        <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+        <link href="css/ionic.app.css" rel="stylesheet">
+        -->
+
+        <!-- jquery framework -->
+        <script src="../js/jquery.js"></script>
+
+        <!-- ionic/angularjs js -->
+        <script src="../lib/ionic/js/ionic.bundle.js"></script>
+        
+        <!-- ionic js -->
+        <script src="http://ionicframework.com/js/site.js?1:280"></script>
+        
+        <!-- cordova script (this will be a 404 during development) -->
+        <script src="../cordova.js"></script>
+    </head>
+  
+    <body class="bg-primary">
+
+        <ion-pane id="faq">
+            <div class="tabs-striped tabs-top tabs-background-positive tabs-color-light">
+                <div class="bar bar-header">
+                    <a href="../settings/index.html" class="btn-link"> <i class="fa fa-angle-left fa-back" aria-hidden="true"></i> </a> 
+                    <div class="h1 title">Ofte stilte spørsmål</div>
+                </div>
+            </div>
+            
+            <div class="list faq-form">
+                
+            </div>
+        </ion-pane>
+
+    </body>
+    
+</html>

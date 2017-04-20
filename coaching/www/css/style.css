@@ -34,7 +34,7 @@ a {
     text-decoration: none; }
 .bg-primary {
     background: #efefef; }
-h1, h2, h3, h4, h5, p {
+h1, h2, h3, h4, h5, p, label {
     color: #5d5d5d; }
 hr {
     color: #5d5d5d;
@@ -496,6 +496,8 @@ progress[value]::-moz-progress-value {
 .goal-form .item {
     padding: 25px !important;
 }
+#contact .bar-header,
+#faq .bar-header,
 #statistic .bar-header {
     color: #fff;
     position: fixed;
@@ -513,6 +515,59 @@ progress[value]::-moz-progress-value {
     float: left !important;
     margin-top: 5px !important;
 }
+
+/* 
+ *    Page 8/9 / kontakt og spørsmål
+ */
+
+#contact .contact-form {
+    padding: 0 15px;
+}
+
+#contact .contact-form h4 {
+    text-align: center;
+    color: #007272;
+    margin-top: 20px;
+}
+#contact .contact-form .contact-form-text {
+    margin-top: 25px;
+}
+.contact-form-text .faq-span {
+    color: #007272;
+    font-weight: 600;
+}
+#contact .contact-form form {
+    margin-top: 25px;
+}
+#contact .contact-form .contact-input-group {
+    margin-top: 15px;
+}
+#contact .contact-form form input,
+#contact .contact-form form textarea {
+    margin-top: 5px;
+    padding: 5px 10px;
+    background: transparent;
+    border: 1px solid #007272 !important; 
+    width: 100%;
+}
+#contact .contact-form form textarea {
+    height: 130px;
+    max-height: 130px;
+}
+#contact .contact-form form button {
+    color: #fff;
+    background: #007272;
+    border: none;
+    padding: 15px;
+    margin-top: 25px;
+    width: 100%;
+}
+#contact .contact-form form input:focus,
+#contact .contact-form form textarea:focus {
+    border-left: 5px solid #007272 !important;}
+}
+
+
 /*
 #session-count,
 #success-count,

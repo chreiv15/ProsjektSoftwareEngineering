@@ -12,18 +12,21 @@ function checkSession() { // MÅ FULLFØRES
 function goBack() {
     switch (step) {
         case 1:
+            window.location = "../home/index.html";
             break;
         
         case 2:
+            step = 1;
             $("#step2").removeClass("show");
             $("#step2").addClass("hide");
             $("#step1").addClass("show");
             break;
         
         case 3:
-            $("#step2").removeClass("show");
-            $("#step2").addClass("hide");
-            $("#step3").addClass("show");
+            step = 2;
+            $("#step3").removeClass("show");
+            $("#step3").addClass("hide");
+            $("#step2").addClass("show");
             break;
         
         default:
@@ -33,7 +36,7 @@ function goBack() {
 
 function setGoal(id) {
     step = 2;
-
+    
     switch (id) {
     case 1:
         session = "clothes";
@@ -56,6 +59,7 @@ function setGoal(id) {
         break;
     }
 
+    $("#step1").removeClass("show");
     $("#step1").addClass("hide");
     $("#step2").addClass("show");
 }
@@ -89,6 +93,8 @@ function wantGoal() {
 }
 
 function addGoal(category) {
+    step = 3;
+    
     category = parseInt(category) - 10;
     $("#step2").removeClass("show");
     $("#step2").addClass("hide");

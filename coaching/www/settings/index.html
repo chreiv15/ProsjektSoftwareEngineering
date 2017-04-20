@@ -37,15 +37,10 @@
 
         <!-- cordova script (this will be a 404 during development) -->
         <script src="../cordova.js"></script>
-
-        <!-- custom js -->
-        <script src="../js/app.js"></script>
     </head>
   
-    <body ng-app="coacing">
-
-        <ion-pane class="user-profile">
-            
+    <body>
+        <ion-pane class="user-profile">            
             <div class="tabs-striped tabs-top tabs-background-positive tabs-color-light">
                 <div class="bar bar-header">
                     <a href="../home/index.html" class="btn-link"> <i class="fa fa-angle-left fa-back" aria-hidden="true"></i> </a> 
@@ -66,12 +61,12 @@
                         <div class="item item-icon-left item-header">
                             Hjelp og support
                         </div>
-                        <div class="item item-icon-left">
+                        <a href="../faq/index.html"><div class="item item-icon-left">
                             Ofte stilte spørsmål
-                        </div>
-                        <div class="item item-icon-left">
+                        </div></a>
+                        <a href="../contact/index.html"><div class="item item-icon-left">
                             Kontakt
-                        </div>
+                        </div></a>
                         
                         <div class="item item-icon-left item-header">
                             Om
@@ -85,9 +80,6 @@
                     </div>
                 </div>
             </div>
-
-            <ion-content>
-            </ion-content>
         </ion-pane>
 
     </body>
