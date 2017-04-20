@@ -3,12 +3,41 @@ var goalID;
 var goalName;
 var goalCategoryName;
 var hasGoal = false;
+var step = 1;
 
 function checkSession() { // MÅ FULLFØRES
     alert("Dette vil overskrive din nåværende økt");
 }
 
+<<<<<<< HEAD
+function goBack() {
+    switch (step) {
+        case 1:
+            break;
+        
+        case 2:
+            $("#step2").removeClass("show");
+            $("#step2").addClass("hide");
+            $("#step1").addClass("show");
+            break;
+        
+        case 3:
+            $("#step2").removeClass("show");
+            $("#step2").addClass("hide");
+            $("#step3").addClass("show");
+            break;
+        
+        default:
+            break;
+    }
+}
+
+function setGoal(id) {
+    step = 2;
+    
+=======
 function setGoal(id) { // INGEN FUNKSJONALITET
+>>>>>>> origin/master
     switch (id) {
     case 1:
         session = "clothes";

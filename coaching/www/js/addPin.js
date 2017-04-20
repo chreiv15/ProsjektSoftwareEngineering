@@ -7,7 +7,7 @@ function addPin() {
         pin: $("#pin").val()
     }, function(data) {
         console.log(data);
-        window.location = '../addsession/';
+        window.location = '../addsession/index.html';
     });
     
 }

@@ -39,14 +39,13 @@
         <script src="../cordova.js"></script>
     </head>
   
-    <body ng-app="coacing">
-
-        <ion-pane class="add-session">
-            
+    <body>
+        <ion-pane class="add-session">            
             <div class="tabs-striped tabs-top tabs-background-positive tabs-color-light">
                 <div class="bar bar-header">
-                    <a href="../home/index.html" class="btn-link"> <i class="fa fa-times-circle fa-back" aria-hidden="true"></i> </a> 
-                    <div class="h1 title">Start ØKT</div> 
+                    <a class="btn-link" onclick="goBack();"> <i class="fa fa-angle-left fa-back" aria-hidden="true"></i> </a> 
+                    <div class="h1 title">Start ØKT</div>
+                    <a href="../home/index.html" class="btn-link quit-session-btn"> <i class="fa fa-times-circle fa-back" aria-hidden="true"></i> </a>  
                 </div>
             </div>
             
@@ -69,15 +68,9 @@
                             <div onClick="setGoal(4);" class="item item-icon-left text-left">
                                 Eletronikk<img class="goal-icon list-icon" src="../img/icon-konsoll.svg" />
                             </div>
-                            <!--div class="item item-icon-left text-center">
-                                Egendefinert
-                            </div-->
 
                             <div class="item item-icon-left item-header">
                             </div>
-                            <!--div class="item item-icon-left item-save">
-                                Neste
-                            </div-->
                         </div>
                     </div>
                 </div>
@@ -129,14 +122,10 @@
                     </div>
                 </div>
             </div>
-
-            <ion-content>
-            </ion-content>
         </ion-pane>
         
         <!-- custom screen js -->
         <script src="../js/addSession.js"></script>
-
     </body>
     
 </html>

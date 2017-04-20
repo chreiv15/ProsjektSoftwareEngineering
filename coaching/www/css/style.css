@@ -125,7 +125,10 @@ body {
     color: #efefef !important;
 }
 .profile-buttons a {
-    margin: 15px 0;
+    padding: 15px 0px !important;
+    margin: 15px auto;
+    width: calc(100% - 30px);
+    text-align: center;
 }
 .profile-buttons .button-logout {
     margin-bottom: 30px !important;
@@ -250,6 +253,7 @@ bottom:   0;}
 #session-goal .fa {
     font-size: 20px;
     float: right;
+    color: #007272;
 }
 
 
@@ -470,6 +474,10 @@ progress[value]::-moz-progress-value {
 
 .add-page {
     padding-top: 0; }
+.quit-session-btn i {
+    position: absolute;
+    right: 0;
+}
 
 /* 
  *    Page 7 / statistikk
