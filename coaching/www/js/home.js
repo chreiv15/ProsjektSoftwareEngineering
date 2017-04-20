@@ -13,10 +13,14 @@ function getCurrentSprint() {
         var sprintStart = new Date(data['sprintStart']);
         var today = new Date();
         // SJEKKER OM ØKTEN SKAL AVSLUTTES
-        if(sprintEnd.getDate() == today.getDate()){
-            window.location = '../summary/index.html';
+        if(sprintEnd.getDate()+sprintEnd.getMonth() == today.getDate()+today.getMonth()){
+            console.log(today.getDate()+'-'+today.getMonth() + ' IS ' + sprintEnd.getDate()+'-'+sprintEnd.getMonth());
+            //window.location = '../summary/index.html';
         }else{
-            //console.log(today.getDate()+'-'+today.getMonth() + ' IS NOT ' + sprintEnd.getDate()+'-'+sprintEnd.getMonth());
+            /*
+            console.log(today.getDate()+today.getMonth());
+            console.log(sprintEnd.getDate()+sprintEnd.getMonth());
+            */
         }
         var sprintLength = sprintEnd - sprintStart;
         var sprintLength = Math.round(sprintLength/one_day);
