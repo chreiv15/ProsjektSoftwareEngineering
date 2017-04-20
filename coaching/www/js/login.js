@@ -20,12 +20,6 @@ function submit() {
             data = JSON.parse(data);
             console.log(data);
             localStorage.setItem("login", JSON.stringify(data));
-            alert('Velkommen, ' + data.firstname + '!');
             window.location = 'home/index.html';
         });
-}
-
-function getObject() {
-    var data = localStorage.getItem('login');
-    console.log(JSON.parse(data));
 }
