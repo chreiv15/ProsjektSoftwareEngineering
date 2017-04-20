@@ -1,4 +1,6 @@
-console.log('Hello world login');
+console.log('Hello world! #login');
+
+localStorage.clear();
 
 $("#submit").click(function () {
     submit();
@@ -12,17 +14,18 @@ document.onkeypress = function (e) {
 };
 
 function submit() {
+    console.log('Submit');
     $.post("http://fredrikhagen.no/westerdals/gruppe19/ajax/getUser.php", {
-            user: $('#email').val(),
-            pin: $('#pin').val()
-        },
-        function (data, status) {
-            data = JSON.parse(data);
-            console.log(data);
-            localStorage.setItem("login", JSON.stringify(data));
-            alert('Velkommen, ' + data.firstname + '!');
-            window.location = 'home/index.html';
-        });
+        user: $('#email').val(),
+        pin: $('#pin').val()
+    },
+    function (data, status) {
+        data = JSON.parse(data);
+        console.log(data);
+        localStorage.setItem("login", JSON.stringify(data));
+        alert('Velkommen, ' + data.firstname + '!');
+        window.location = 'home/index.html';
+    });
 }
 
 function getObject() {

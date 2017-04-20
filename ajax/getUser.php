@@ -3,7 +3,7 @@
 require_once 'dbc.php';
 require_once 'val.php';
 
-$email = val($_POST['user']);
+$email = strtolower(val($_POST['user']));
 $pin = val($_POST['pin']);
 
 $sql = "SELECT * FROM userLogin WHERE email = '$email' AND pin = $pin ORDER BY sprintId DESC LIMIT 1";

@@ -4,11 +4,11 @@ var goalName;
 var goalCategoryName;
 var hasGoal = false;
 
-function checkSession() {
+function checkSession() { // MÅ FULLFØRES
     alert("Dette vil overskrive din nåværende økt");
 }
 
-function setGoal(id) {
+function setGoal(id) { // INGEN FUNKSJONALITET
     switch (id) {
     case 1:
         session = "clothes";
@@ -36,6 +36,7 @@ function setGoal(id) {
 }
 
 function wantGoal() {
+    
     hasGoal = true;
 
     $("#session-goal").addClass("show");
@@ -87,6 +88,7 @@ function setActive(button) {
 }
 
 function startSesstion() {
+    console.log("Start session");
     $.post("http://fredrikhagen.no/westerdals/gruppe19/ajax/addSprint.php", {
         userId: login.id,
         sprintGoal: $("#session-savings").val(),
@@ -96,9 +98,10 @@ function startSesstion() {
         goalCategory: goalCategory,
         goalTargetDate: goalTargetDate
     }, function (data) {
+        console.log('Response');
         window.sprintId = data.trim();
-        console.log(sprintId);
-        //window.location = '../addsession/';
+        console.log('SprintID: '+sprintId);
+        window.location = '../home/';
     });
 }
 
