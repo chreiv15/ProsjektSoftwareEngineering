@@ -32,7 +32,7 @@ readLogin();
 function getFormerSprint() {
     $.post("http://fredrikhagen.no/westerdals/gruppe19/ajax/getFormerSprint.php", {
             userId: login.id,
-            sprintId: location.search.substr(4)
+            sprintId: location.search.substr(0,4)
         },
         function (data) {
             data = JSON.parse(data);
@@ -42,6 +42,7 @@ function getFormerSprint() {
             sprint.sprintSpending = parseFloat(sprint.sprintSpending);
             sprint.sprintTarget = parseFloat(sprint.sprintTarget);
 
+            $('#sprintName').html('Viser statistikk for ØKT '+sprint.id);
             $('#savedAmount').html('Du sparte ' + (login.beforeSpending - sprint.sprintSpending).toFixed(2).toString().replace(".", ",") + ' kr');
             $('#period').html(dateFormat(data.sprintStart) + ' - ' + dateFormat(data.sprintEnd));
             $('#setSpending').html('Du hadde avsatt forbruk på ' + (login.beforeSpending - data.sprintTarget).toFixed(2).toString().replace(".", ",")+' kr');

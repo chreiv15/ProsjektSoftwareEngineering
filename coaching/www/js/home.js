@@ -50,7 +50,7 @@ $("#prior").click(function(){
         for(var i=0;i<data.length;i++){
             var item = document.createElement('a');
             item.className = 'item item-icon-left';
-            item.href = '../previous/index.html?id='+data[i].id;
+            item.href = '../previous/index.html?id='+data[i].id+'&i='+(i+1);
             var icon = document.createElement('i');
             icon.className = 'fa fa-check-circle-o text-success';
             $(icon).attr('aria-hidden','true');
