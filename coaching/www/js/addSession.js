@@ -126,7 +126,7 @@ function startSesstion() {
         console.log('Response');
         window.sprintId = data.trim();
         console.log('SprintID: '+sprintId);
-        window.location = '../home/';
+        window.location = '../home/index.html';
     });
 }
 
