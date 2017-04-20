@@ -7,7 +7,6 @@ function addUser() {
         email: $("#email").val()
     }, function(data) {
         console.log(data);
-        
         window.location = "../newpin/index.html?u=" + data;
     });
     
