@@ -5,9 +5,52 @@ var goalCategoryName;
 var hasGoal = false;
 var step = 1;
 
-function checkSession() { // MÅ FULLFØRES
-    alert("Dette vil overskrive din nåværende økt");
+function getLocalStorage(name) {
+    var data = localStorage.getItem(name);
+    data = JSON.parse(data);
+    console.log(data);
+    return data;
 }
+
+function readLogin() {
+
+    login = getLocalStorage("login");
+    login['id'] = parseInt(login['id']);
+    login['goalId'] = parseInt(login['goalId']);
+    login['goalValue'] = parseFloat(login['goalValue']);
+    login['beforeSpending'] = parseFloat(login['beforeSpending']);
+    login['accountValue'] = parseFloat(login['accountValue']);
+    login['accountId'] = parseInt(login['accountId']);
+    login['sprintId'] = parseInt(login['sprintId']);
+    window.login = login;
+    $('#user-name').html(login.firstname + ' ' + login.lastname);
+}
+readLogin();
+
+function checkSession() { // MÅ FULLFØRES
+    $.post("http://fredrikhagen.no/westerdals/gruppe19/ajax/getActiveSprints.php",
+    {
+        id: login.id
+    },
+    function (data) {
+        if(data.trim()!='false'){
+            var x = confirm("Dette vil overskrive din nåværende økt");
+            if(x == true){
+                console.log(data);
+                $.post("http://fredrikhagen.no/westerdals/gruppe19/ajax/deleteCurrentSprint.php",
+                {
+                    id: data
+                },
+                function (data) {
+                    console.log(data);
+                });
+            }else{
+                window.location = "../home/index.html";
+            }
+        }
+    });
+}
+checkSession();
 
 function goBack() {
     switch (step) {
@@ -153,43 +196,3 @@ Date.prototype.addDays = function (days) {
     this.setDate(this.getDate() + parseInt(days));
     return this;
 };
-
-function getCookie(cname) {
-    var name = cname + "=";
-    var ca = document.cookie.split(';');
-    for (var i = 0; i < ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') {
-            c = c.substring(1);
-        }
-        if (c.indexOf(name) == 0) {
-            var s = c.substring(name.length, c.length);
-            s = decodeURIComponent(s);
-            s = JSON.parse(s);
-            return s;
-        }
-    }
-    return "";
-}
-
-function getLocalStorage(name) {
-    var data = localStorage.getItem(name);
-    data = JSON.parse(data);
-    console.log(data);
-    return data;
-}
-
-function readLogin() {
-
-    login = getLocalStorage("login");
-    login['id'] = parseInt(login['id']);
-    login['goalId'] = parseInt(login['goalId']);
-    login['goalValue'] = parseFloat(login['goalValue']);
-    login['beforeSpending'] = parseFloat(login['beforeSpending']);
-    login['accountValue'] = parseFloat(login['accountValue']);
-    login['accountId'] = parseInt(login['accountId']);
-    login['sprintId'] = parseInt(login['sprintId']);
-    window.login = login;
-    $('#user-name').html(login.firstname + ' ' + login.lastname);
-}
-readLogin();
