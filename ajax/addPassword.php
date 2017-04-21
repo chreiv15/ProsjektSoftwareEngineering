@@ -11,7 +11,7 @@ $sql = "UPDATE dnb_users SET pin = $pin WHERE id = $id";
 $response = @mysqli_query($dbc, $sql);
 
 if($response){
-    $sql = "SELECT * FROM dnb_users WHERE id = $id";
+    $sql = "SELECT * FROM userLogin WHERE id = $id";
 
 	$response = @mysqli_query($dbc, $sql);
 
