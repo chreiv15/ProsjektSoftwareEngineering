@@ -539,6 +539,9 @@ progress[value]::-moz-progress-value {
     color: #007272;
     margin-top: 20px;
 }
+#faq .faq-form h5 {
+    margin-top: 25px;
+}
 #faq .faq-form .faq-form-text,
 #contact .contact-form .contact-form-text {
     margin-top: 25px;
