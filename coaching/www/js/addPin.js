@@ -7,6 +7,8 @@ function addPin() {
         pin: $("#pin").val()
     }, function(data) {
         console.log(data);
+        data = JSON.parse(data);
+        console.log(data);
         localStorage.setItem("login", JSON.stringify(data));
         window.location = '../addsession/index.html';
     });

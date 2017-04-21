@@ -11,7 +11,7 @@ $sql = "UPDATE dnb_users SET pin = $pin WHERE id = $id";
 $response = @mysqli_query($dbc, $sql);
 
 if($response){
-    $sql = "SELECT * FROM userLogin WHERE id = $id ORDER BY sprintId DESC LIMIT 1";
+    $sql = "SELECT * FROM dnb_users WHERE id = $id";
 
 	$response = @mysqli_query($dbc, $sql);
 
@@ -24,10 +24,6 @@ if($response){
 		$accountId = $row['accountId'];
 		$accountValue = $row['accountValue'];
 		$beforeSpending = $row['beforeSpending'];
-		$goalValue = $row['goalValue'];
-		$goalId = $row['goalId'];
-		$sprintId = $row['sprintId'];
-		$sprintStart = $row['sprintStart'];
 		
 		$json = array();
 		$json['id'] = $id;
@@ -37,13 +33,10 @@ if($response){
 		$json['accountId'] = $accountId;
 		$json['accountValue'] = $accountValue;
 		$json['beforeSpending'] = $beforeSpending;
-		$json['goalId'] = $goalId;
-		$json['goalValue'] = $goalValue;
-		$json['sprintStart'] = substr($sprintStart,0,10);
-		$json['sprintId'] = $sprintId;
 		$json = json_encode($json);
-		//setcookie("login", $json, time()+3600, "/");
 		echo $json;
+	}else{
+		echo $sql;
 	}
 }else{
     echo mysqli_error($dbc);

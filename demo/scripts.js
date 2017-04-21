@@ -1,4 +1,4 @@
-var account = 97348898349;
+var account = document.getElementById('ano').value;
 function buy(){
     document.getElementById("result").innerHTML = "<p>Kjøper...</p>";
     document.getElementById("registerSound").play();
