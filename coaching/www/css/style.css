@@ -528,22 +528,27 @@ progress[value]::-moz-progress-value {
  *    Page 8/9 / kontakt og spørsmål
  */
 
+#faq .faq-form,
 #contact .contact-form {
     padding: 0 15px;
 }
 
+#faq .faq-form h4,
 #contact .contact-form h4 {
     text-align: center;
     color: #007272;
     margin-top: 20px;
 }
+#faq .faq-form .faq-form-text,
 #contact .contact-form .contact-form-text {
     margin-top: 25px;
 }
+#faq .faq-form-text .faq-span
 .contact-form-text .faq-span {
     color: #007272;
     font-weight: 600;
 }
+
 #contact .contact-form form {
     margin-top: 25px;
 }
