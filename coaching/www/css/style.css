@@ -7,7 +7,7 @@
 .bar .title {
     text-align: left;
     padding: 2px 45px;
-    font-weight: 200 !important;
+    font-weight: 300 !important;
 }
 
 .home-title {
@@ -149,7 +149,7 @@ body {
     border-color: transparent; 
 }
 .item {
-    padding: 20px 15px;
+    padding: 15px;
 }
 
 /* /List */
@@ -168,10 +168,23 @@ body {
     box-shadow: none;
     text-align: center;
     background: transparent; }
-.card-pic {
+.card-pic-container {
+    border-radius: 100px;
+    width: 100px;
+    height: 100px; 
+    margin: 10px auto 2px !important;
+    overflow: hidden;
+}
+.card-pic-container-home {
+    border-radius: 100px;
     width: 80px;
     height: 80px; 
-    margin: 10px auto 15px !important;}
+    margin: 10px auto 25px !important;
+    overflow: hidden;
+}
+.card-pic {
+    width: 100%;
+}
 .card-name {
     color: #fff; }
 .tabs {
@@ -459,6 +472,9 @@ progress[value]::-moz-progress-value {
     padding-top: 10px;
     text-align: left; }
 .item-save {
+    padding: 15px 0px !important;
+    margin: 15px auto;
+    width: calc(100% - 30px);
     color: #fff;
     text-align: center;
     background: #007272;
@@ -468,6 +484,24 @@ progress[value]::-moz-progress-value {
     text-align: center;
     background: #f35564;
     border: none; }
+.picture-input {
+    float: left;
+}
+input[type="file"] {
+    display: none;
+}
+.picture-file-upload {
+    width: 100%;
+    font-size: 16px;
+    display: inline-block;
+    cursor: pointer;
+}
+.picture-file-upload .fa-upload {
+    color: #007272;
+    right: 0;
+    top: 20px;
+    position: absolute;
+}
 
 /*
  *    Page 5 / innstillinger
@@ -538,6 +572,9 @@ progress[value]::-moz-progress-value {
     text-align: center;
     color: #007272;
     margin-top: 20px;
+}
+#faq .faq-form h5 {
+    margin-top: 25px;
 }
 #faq .faq-form .faq-form-text,
 #contact .contact-form .contact-form-text {

@@ -30,7 +30,9 @@
                     $response = @mysqli_query($dbc, $query);
                     break;
                 }
-            }
+            }else{
+				echo $sql;
+			}
         }
         while(mysqli_next_result($dbc));
     }

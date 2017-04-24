@@ -4,7 +4,7 @@ showPage(pageIndex);
 function plusPage(n) {
     showPage(pageIndex = n);
 }
-
+    
 function showPage(n) {
     var i;
     var x = document.getElementsByClassName("page");
