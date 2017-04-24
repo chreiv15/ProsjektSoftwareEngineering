@@ -40,7 +40,9 @@
                     
                     <div class="card user-card">
                         <div class="item-text-wrap">
-                            <img class="card-pic" src="../img/avatar-default-profile.png">
+                            <div class="card-pic-container">
+                                <img class="card-pic" src="../img/avatar-default-profile.png">
+                            </div>
                             <a><h4 class="profile-card-name" id="user-name"></h4></a>
                         </div>
                     </div>
@@ -55,6 +57,14 @@
                     <div id="prior-list" class="list profile-list">
                         <div class="item item-icon-left item-header">
                             Personlig informasjon
+                        </div>
+                        <div class="item item-icon-left">
+                            <label class="picture-file-upload">
+                                <input type="file" accept="image/*" onchange="previewFile()" />
+                                <i class="file-text"></i>Velg nytt profilbilde
+                                <i class="fa fa-upload" aria-hidden="true"></i>
+                            </label>
+                            <input class="picture-input" type="file" accept="image/*" onchange="previewFile()">
                         </div>
                         <div class="item item-icon-left">
                             E-post
@@ -92,14 +102,20 @@
     </body>
     <script src="../js/profile.js"></script>
     <script type="text/javascript">
-        function setActive(button) {
-            var btn = $(button);
-            
-            $(".active").removeClass("active");
-            
-            if (!btn.hasClass("active")) {
-                btn.addClass("active");
-            } 
+        function previewFile() {
+            var preview = document.querySelector('img'); //selects the query named img
+            var file = document.querySelector('input[type=file]').files[0]; //sames as here
+            var reader = new FileReader();
+
+            reader.onloadend = function() {
+                preview.src = reader.result;
+            }
+
+            if (file) {
+                reader.readAsDataURL(file); //reads the data as a URL
+            } else {
+                preview.src = "";
+            }
         }
     </script>
     
