@@ -1,5 +1,4 @@
 
-    var account = $("#accountNo").val();
     function buy(){
         document.getElementById("result").innerHTML = "<p>Kjøper...</p>";
         document.getElementById("registerSound").play();
@@ -11,9 +10,11 @@
         var catg = ids.indexOf(this.parentNode.id);
         var descriptions = ['Dagligvarer','Kaffe','Lunsj i kafeteria','Drinker/alkohol','Matlevering på døren'];
         var desc = descriptions[catg];
+        var account = $("#accountNo").val();
         console.log(desc);
         submit(desc,price,catg,account);
     }
+/*
     function submit(desc,price,catg){
         var account = $("#accountNo").val();
         console.log(desc+" til "+price+" kr, kategori "+catg);
@@ -32,6 +33,19 @@
         console.log(url);
         xmlhttp.open("GET",url,true);
         xmlhttp.send();
+    }
+*/
+    function submit(desc,price,catg,account){
+        $.post("../ajax/addTransaction.php", {
+            category: catg,
+            value: price,
+            description: desc,
+            account: account
+        },
+        function(data) {
+            setTimeout(function(){ $("#result").html(""); }, 3000);
+            getTransactions(account);
+        });
     }
     function getTransactions(account){
         $.post("../ajax/getTransactions.php", {

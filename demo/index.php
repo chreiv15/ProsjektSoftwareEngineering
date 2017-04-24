@@ -8,7 +8,7 @@
 <main>
     <div id="info">
         <h1>Sløsomat</h1>
-        <input id="accountNo" type="number" value="97348898360" placeholder="Kontonummer">
+        <input id="accountNo" type="number" value="97348898376" placeholder="Kontonummer">
     </div>
     <div class="box" id="grc">
         <i class="material-icons">shopping_cart</i>

@@ -2,10 +2,10 @@
 
 require_once '../functions.php';
 
-$description = val($_GET['description']);
-$value = val($_GET['value']);
-$category = val($_GET['category']);
-$account = val($_GET['account']);
+$description = val($_POST['description']);
+$value = val($_POST['value']);
+$category = val($_POST['category']);
+$account = val($_POST['account']);
 
 echo addTransaction($description, $value, $category, $account);
 
