@@ -1,0 +1,84 @@
+h1 {
+    font-family: sans-serif;
+    text-transform: capitalize;
+    font-size: 70px;
+    margin-bottom: 25px;
+}
+p,
+a,
+input,
+label,
+td,
+th {
+    font-family: sans-serif;
+    font-size: 16px;
+}
+
+input,
+img {
+    display: block;
+    margin-bottom: 25px;
+}
+
+input {
+    padding: 5px;
+    width: 55px;
+    border: none;
+    display: inline-block;
+}
+
+.box {
+    display: inline-block;
+    text-align: center;
+}
+
+.material-icons {
+    font-size: 150px;
+    cursor: pointer;
+}
+
+.material-icons:hover {
+    color: darkslategray;
+}
+
+main {
+    text-align: center;
+    margin-top: 25px;
+}
+
+#result {
+    margin-top: 50px;
+}
+
+#result p {
+    background-color: greenyellow;
+    padding: 10px;
+    width: 300px;
+    margin: 0 auto;
+    display: inline-block;
+}
+
+#transactionTable {
+    margin: 0 auto;
+}
+
+#transactions th {
+    text-align: left;
+}
+
+#transactions td:nth-child(1) {
+    width: 200px;
+    padding-right: 10px;
+}
+
+#transactions {
+    margin: 0 auto;
+    padding: 25px;
+    border: 1px solid #222;
+}
+#accountNo {
+    border: 2px solid #2e2e2e;
+    padding: 8px 10px;
+    width: 300px;
+    text-align: center;
+}

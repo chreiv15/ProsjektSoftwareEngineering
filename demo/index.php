@@ -1,73 +1,15 @@
-<?php
-
-	$user = 5201000;
-
-?>
 <head>
     <meta charset="utf-8">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <style>
-        p,a,input,label,td,th {
-            font-family: sans-serif;
-            font-size: 16px;
-        }
-        input, img {
-            display: block;
-            margin-bottom: 10px;
-        }
-        input {
-            padding: 5px;
-            width: 50px;
-            border: none;
-            display: inline-block;
-        }
-        .box {
-            display: inline-block;
-            text-align: center;
-        }
-        .material-icons {
-            font-size: 150px;
-            cursor: pointer;
-        }
-        .material-icons:hover {
-            color: darkslategray;
-        }
-        main {
-            text-align: center;
-            margin-top: 25px;
-        }
-        #result {
-            margin-top: 50px;
-        }
-        #result p {
-            background-color: greenyellow;
-            padding: 10px;
-            width: 300px;
-            margin: 0 auto;
-            display: inline-block;
-        }
-        #transactionTable {
-            margin: 0 auto;
-        }
-        #transactions th {
-            text-align: left;
-        }
-        #transactions td:nth-child(1) {
-            width: 200px;
-            padding-right: 10px;
-        }
-        #transactions {
-            margin: 0 auto;
-            padding: 25px;
-            border: 1px solid #222;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="style.css">
     <script src="scripts.js"></script>
 </head>
-
 <main>
-    <div id="info"></div>
+    <div id="info">
+        <h1>Sløsomat</h1>
+        <input id="accountNo" type="number" value="97348898360" placeholder="Kontonummer">
+    </div>
     <div class="box" id="grc">
         <i class="material-icons">shopping_cart</i>
         <p>Dagligvarer</p>
@@ -114,14 +56,9 @@
     </table>
 </main>
 <script>
-
     var boxes = document.getElementsByClassName("box");
-    
     for(var i=0;i<boxes.length;i++){
         var nodes = boxes[i].childNodes;
         nodes[1].onclick = buy;
     }
-    var info = document.getElementById("info");
-    info.innerHTML = "<p>Konto: "+account+"</p>";
-
 </script>
