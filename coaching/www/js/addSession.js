@@ -1,6 +1,7 @@
 var session = "";
 var goalID;
 var goalName;
+var goalValue;
 var goalCategoryName;
 var hasGoal = false;
 var step = 1;
@@ -138,16 +139,28 @@ function wantGoal() {
 function addGoal(category) {
     step = 3;
     
-    category = parseInt(category) - 10;
+    $("#step3").addClass("show");
     $("#step2").removeClass("show");
     $("#step2").addClass("hide");
-    $("#step3").addClass("show");
+    
+    if(category){
+        category = parseInt(category) - 10;
+        console.log(category)
 
-    if (hasGoal) {
-        $("#has-goal").append("<div class='item item-icon-left'>Du har valgt " + categoryList[category]['name'].toLowerCase() + "</div>");
-        $("#has-goal").append("<div class='item item-icon-left'>Skriv inn navnet på ditt sparemål<input type='text' class='profile-input' id='session-goalname' placeholder='f.eks " + categoryList[category]['example'] + "' /></div>");
-        $("#has-goal").append("<div class='item item-icon-left'>Hva koster sparemålet?<input type='text' class='profile-input' id='session-goalvalue' placeholder='f.eks 8000' / onkeyup='getTargetDate()'></div>");
-        $("#has-goal").append("<div class='item item-icon-left'>Du vil nå målet innen<input type='text' class='profile-input' id='session-goaltargetdate' readonly /></div>");
+        if (hasGoal) {
+            $("#has-goal").append("<div class='item item-icon-left'>Du har valgt " + categoryList[category]['name'].toLowerCase() + "</div>");
+            $("#has-goal").append("<div class='item item-icon-left'>Skriv inn navnet på ditt sparemål<input type='text' class='profile-input' id='session-goalname' placeholder='f.eks " + categoryList[category]['example'] + "' /></div>");
+            $("#has-goal").append("<div class='item item-icon-left'>Hva koster sparemålet?<input type='text' class='profile-input' id='session-goalvalue' placeholder='f.eks 8000' / onkeyup='getTargetDate()'></div>");
+            $("#has-goal").append("<div class='item item-icon-left'>Du vil nå målet innen<input type='text' class='profile-input' id='session-goaltargetdate' readonly /></div>");
+        }
+    }else{
+        category = 21;
+        window.goalCategory = 21;
+        window.goalCategoryName = 'Generelt';
+        window.goalName = 'Generelt';
+        var target = new Date();
+        target.addDays(30);
+        window.goalTargetDate = target;
     }
 }
 
@@ -163,15 +176,22 @@ function setActive(button) {
 
 function startSesstion() {
     console.log("Start session");
+    if(hasGoal == true){
+        goalValue = $("#session-goalvalue").val();
+        goalName = $("#session-goalname").val();
+    }else{
+        goalValue = $("#session-savings").val();
+    }
     $.post("http://fredrikhagen.no/westerdals/gruppe19/ajax/addSprint.php", {
         userId: login.id,
         sprintGoal: $("#session-savings").val(),
         beforeSpending: login.beforeSpending,
-        goalName: $("#session-goalname").val(),
-        goalValue: $("#session-goalvalue").val(),
+        goalName: goalName,
+        goalValue: goalValue,
         goalCategory: goalCategory,
         goalTargetDate: goalTargetDate
     }, function (data) {
+        console.log(data);
         console.log('Response');
         window.sprintId = data.trim();
         console.log('SprintID: '+sprintId);
