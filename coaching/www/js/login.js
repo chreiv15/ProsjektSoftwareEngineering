@@ -20,10 +20,15 @@ function submit() {
         pin: $('#pin').val()
     },
     function (data, status) {
-        data = JSON.parse(data);
-        console.log(data);
-        localStorage.setItem("login", JSON.stringify(data));
-        window.location = 'home/index.html';
+        console.log(status);
+        if(data != "ERROR"){
+            data = JSON.parse(data);
+            console.log(data);
+            localStorage.setItem("login", JSON.stringify(data));
+            window.location = 'home/index.html';
+        }else{
+            alert('Feil brukernavn eller pin.');
+        }
     });
 }
 
