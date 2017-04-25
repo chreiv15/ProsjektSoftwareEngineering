@@ -7,8 +7,14 @@ $("#user-account").val(login.accountId);
 $("#deleteBtn").click(function(){
     x = confirm('Er du sikker på at du vil slettte brukeren?');
     if(x == true){
-        localStorage.clear();
-        window.location = '../index.html';
+        $.post("http://fredrikhagen.no/westerdals/gruppe19/ajax/deleteAccount.php", {
+            id: login.accountId
+        },
+        function (data, status) {
+            console.log(data);
+            //localStorage.clear();
+            //window.location = '../index.html';
+        })
     }
 });
 
