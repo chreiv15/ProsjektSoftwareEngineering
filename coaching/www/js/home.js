@@ -68,3 +68,7 @@ $("#goal").click(function(){
 
 // Value should be equal to days left in current sprint
 document.getElementById("days-left").value = "15";
+
+if(window.location.search == '?new=1'){
+    $(".guide").show();
+}

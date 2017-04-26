@@ -10,6 +10,6 @@ function addPin() {
         data = JSON.parse(data);
         console.log(data);
         localStorage.setItem("login", JSON.stringify(data));
-        window.location = '../addsession/index.html';
+        window.location = '../addsession/index.html?new=1';
     });
 }

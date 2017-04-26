@@ -195,7 +195,8 @@ function startSesstion() {
         console.log('Response');
         window.sprintId = data.trim();
         console.log('SprintID: '+sprintId);
-        window.location = '../home/index.html';
+        var url = '../home/index.html'+window.location.search;
+        window.location = url;
     });
 }
 

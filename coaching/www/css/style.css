@@ -260,6 +260,15 @@ body {
     right:    0;
     bottom:   15px;
 }
+.guide {
+    background: #f47b20;
+    padding: 8px 10px;
+    border-radius: 5px;
+    color: #FFF;
+    display: none;
+    width: 90%;
+    margin: 0 auto;
+}
 
 /*
  *    Page 0.1 / start økt
