@@ -262,11 +262,10 @@ body {
 }
 .guide {
     background: #f47b20;
-    padding: 8px 10px;
-    border-radius: 5px;
+    padding: 10px;
     color: #FFF;
     display: none;
-    width: 90%;
+    width: 100%;
     margin: 0 auto;
 }
 
